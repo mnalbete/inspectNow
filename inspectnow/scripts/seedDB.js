@@ -10,7 +10,13 @@ mongoose.connect(
 
 const propertySeed = [
   {
-    property_info:      {address: "new address"} ,
+    property_info:      {
+      address: "new address",
+      image: {
+        name: "bathroom",
+
+      }
+    } ,
     report_overview: "",
     front_door: "",
     hvac: "",
