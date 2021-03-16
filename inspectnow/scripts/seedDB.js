@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const db = require("../models");
+const fs = require('fs');
 
 // This file empties the Books collection and inserts the books below
 
@@ -14,9 +15,11 @@ const propertySeed = [
       address: "new address",
       image: {
         name: "bathroom",
-
+        img: {
+        data: fs.readFileSync('C:/Users/ralph/Desktop/HW/project-3/inspectnow/client/public/bathroom.jpg'),
+        contentType: 'image/png'       
       }
-    } ,
+    }} ,
     report_overview: "",
     front_door: "",
     hvac: "",
