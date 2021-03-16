@@ -5,11 +5,12 @@ const propertySchema = new Schema({
     id: {type: String, require: true},
     property_info: { type: PropertyInfo },
     report_overview: { type: String},
-    front_door: { type: String},
+    front_door: {        
+        type: String},
     hvac: { type: String},
     ceiling: { type: String}
 })
 
-const Properties = mongoose.model("Properties", propertySchema);
+const Property = mongoose.model("Property", propertySchema);
 
-module.exports = Properties;
+module.exports = Property;
