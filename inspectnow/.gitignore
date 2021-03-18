@@ -2,12 +2,7 @@
 
 # dependencies
 /node_modules
-<<<<<<< HEAD
 /client/node_modules
-=======
-/.pnp
-.pnp.js
->>>>>>> 793d3cc51f46a1787e7c07261214cae7f95ec755
 
 # testing
 /coverage
