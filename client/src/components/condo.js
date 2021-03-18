@@ -1,6 +1,6 @@
-import './App.css';
+import '../App.css';
 
-function App() {
+function Condo() {
   return (
     <div>
     <main>
@@ -54,4 +54,4 @@ function App() {
     );
   }
 
-export default App;
+export default Condo;
