@@ -9,8 +9,9 @@ html {
 }
 
 section {
-  padding: 4rem;
-  margin: 0 0 2rem 0;
+  /* padding: 6rem; */
+  padding: 60px 1px 50px 1px; 
+  margin: 0 0 0 0;
 }
 
 main {
@@ -45,12 +46,13 @@ nav ul li a.current {
   background: black;
 }
 
-section {
-  background: #6d6d6d;
+/* section {
+  padding: 60px 1px 50px 1px; 
+  background: #cac9c9;
   color: white;
   height: 100%;
   margin-top: 60px;
-}
+} */
 header {
   background: #37474f;
   color: white;
@@ -63,12 +65,21 @@ header {
   width: 100%;
   z-index: 99;
 }
+
+h1 {
+  color: white;
+  text-align: right;
+  background-color: rgb(82, 82, 82);
+  width: 100%;
+  
+
+}
+
 .container {
   left: 0;
   margin-left: 120px;
   min-height: 100%;
   position: relative;
-  text-align: center;
 }
 figure {
   margin: 0;
