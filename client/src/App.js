@@ -1,5 +1,5 @@
 import React from 'react'
-import Condo from "./components/Condo"
+import Condo from "./components/condo"
 
 
 

@@ -1,12 +1,14 @@
-import React, { Component } from 'react';
+import '../App.css';
+import Button from "@material-ui/core/Button"
 
 
-class About extends Component {
-  render() {
-    return(
-      <div><h1>View Edit</h1></div>
-    )
+
+function List() {
+  return (
+    <Button>
+          test
+        </Button>
+    );
   }
-}
 
-export default About;
+export default List;

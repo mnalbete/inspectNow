@@ -10,8 +10,8 @@ html {
 
 section {
   /* padding: 6rem; */
-  padding: 60px 1px 50px 1px; 
-  margin: 0 0 0 0;
+  padding: 70px 10px 50px 10px; 
+  /* margin: 5 5 5 5; */
 }
 
 main {
@@ -55,7 +55,7 @@ nav ul li a.current {
 } */
 header {
   background: #37474f;
-  color: white;
+  color: rgb(0, 212, 0);
   height: 80px;
   left: 0;
   margin-left: 120px;
@@ -67,13 +67,17 @@ header {
 }
 
 h1 {
-  color: white;
-  text-align: right;
+  color: rgb(9, 255, 0);
+  font-size: 22px;
+  text-align: left;
   background-color: rgb(82, 82, 82);
   width: 100%;
-  
-
 }
+#info {
+  text-align: center;
+  width: 100%;
+}
+
 
 .container {
   left: 0;
