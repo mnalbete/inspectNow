@@ -107,7 +107,7 @@ function Condo() {
             </section>
           <section id="section-6">
             <h1>Kitchen&nbsp;&nbsp;</h1>
-            <h3>Kitchen / Outlets&nbsp;&nbsp;</h3>
+            <h3>Lights / Outlets&nbsp;&nbsp;</h3>
             <input type="checkbox" name="test"/>Ceiling lights&nbsp;&nbsp;
             <input type="checkbox" name="test"/>Under Cabinet lights&nbsp;&nbsp;
             <input type="checkbox" name="test"/>GFCI&nbsp;&nbsp;
@@ -121,10 +121,94 @@ function Condo() {
             <input type="checkbox" name="test"/>Time set&nbsp;&nbsp;
             <input type="checkbox" name="test"/>filter&nbsp;&nbsp;
             <input type="checkbox" name="test"/>lighting&nbsp;&nbsp;
-   
+            <h3>Fridge&nbsp;&nbsp;</h3>
+            <input type="checkbox" name="test"/>Ice Maker&nbsp;&nbsp;
+            <input type="checkbox" name="test"/>water&nbsp;&nbsp;
+            <input type="checkbox" name="test"/>Dents&nbsp;&nbsp;
+            <h3>Ranges&nbsp;&nbsp;</h3>
+            <input type="checkbox" name="test"/>Anti-Tip&nbsp;&nbsp;
+            <input type="checkbox" name="test"/>operational&nbsp;&nbsp;
+            <input type="checkbox" name="test"/>Drawer&nbsp;&nbsp;
+            <input type="checkbox" name="test"/>oven light&nbsp;&nbsp;
+            <input type="checkbox" name="test"/>time set&nbsp;&nbsp;
+            <h3>Sink&nbsp;&nbsp;</h3>
+            <input type="checkbox" name="test"/>Faucet&nbsp;&nbsp;
+            <input type="checkbox" name="test"/>Sprayer&nbsp;&nbsp;
+            <input type="checkbox" name="test"/>Hot and Cold&nbsp;&nbsp;
+            <input type="checkbox" name="test"/>leaks&nbsp;&nbsp;
+            <input type="checkbox" name="test"/>Garbage Disposal&nbsp;&nbsp;
+            <h3>Counter&nbsp;&nbsp;</h3>
+            <input type="checkbox" name="test"/>secured&nbsp;&nbsp;
+            <input type="checkbox" name="test"/>Check Edges&nbsp;&nbsp;
+            <input type="checkbox" name="test"/>damages&nbsp;&nbsp;
+            <h3>Cabinet&nbsp;&nbsp;</h3>
+            <input type="checkbox" name="test"/>Doors loose aligned damages&nbsp;&nbsp;
+            <br></br>
+            <input type="checkbox" name="test"/>shelves loose hardware&nbsp;&nbsp;
+            <br></br>
+            <input type="checkbox" name="test"/>Paint Touch up&nbsp;&nbsp;
+            <br></br>
+            <input type="checkbox" name="test"/>Lazy Susan - Stable on Tracks&nbsp;&nbsp;
+            <br></br>
+            <input type="checkbox" name="test"/>Garbage Disposal&nbsp;&nbsp;
+            <h3>Wall/Ceiling/Floor&nbsp;&nbsp;</h3>
+            <input type="checkbox" name="test"/>Paint&nbsp;&nbsp;
+            <input type="checkbox" name="test"/>damages&nbsp;&nbsp;
+            <input type="checkbox" name="test"/>Stain&nbsp;&nbsp;
             </section>
           <section id="section-7">
             <h1>Bathroom&nbsp;&nbsp;</h1>
+            <h3>Bathroom Door&nbsp;&nbsp;</h3>
+            <input type="checkbox" name="test"/>Paint&nbsp;&nbsp;
+            <input type="checkbox" name="test"/>door stop&nbsp;&nbsp;
+            <input type="checkbox" name="test"/>handle&nbsp;&nbsp;
+            <input type="checkbox" name="test"/>Latching&nbsp;&nbsp;
+            <input type="checkbox" name="test"/>strike plate&nbsp;&nbsp;
+            <input type="checkbox" name="test"/>Scratches&nbsp;&nbsp;
+            <h3>Lights / Outlets&nbsp;&nbsp;</h3>
+            <input type="checkbox" name="test"/>lights&nbsp;&nbsp;
+            <input type="checkbox" name="test"/>Exhaust Fan&nbsp;&nbsp;
+            <input type="checkbox" name="test"/>heat lamp&nbsp;&nbsp;
+            <h3>Microwave&nbsp;&nbsp;</h3>
+            <input type="checkbox" name="test"/>clean&nbsp;&nbsp;
+            <input type="checkbox" name="test"/>Heating&nbsp;&nbsp;
+            <input type="checkbox" name="test"/>Time set&nbsp;&nbsp;
+            <input type="checkbox" name="test"/>filter&nbsp;&nbsp;
+            <input type="checkbox" name="test"/>lighting&nbsp;&nbsp;
+            <h3>Fridge&nbsp;&nbsp;</h3>
+            <input type="checkbox" name="test"/>Ice Maker&nbsp;&nbsp;
+            <input type="checkbox" name="test"/>water&nbsp;&nbsp;
+            <input type="checkbox" name="test"/>Dents&nbsp;&nbsp;
+            <h3>Ranges&nbsp;&nbsp;</h3>
+            <input type="checkbox" name="test"/>Anti-Tip&nbsp;&nbsp;
+            <input type="checkbox" name="test"/>operational&nbsp;&nbsp;
+            <input type="checkbox" name="test"/>Drawer&nbsp;&nbsp;
+            <input type="checkbox" name="test"/>oven light&nbsp;&nbsp;
+            <input type="checkbox" name="test"/>time set&nbsp;&nbsp;
+            <h3>Sink&nbsp;&nbsp;</h3>
+            <input type="checkbox" name="test"/>Faucet&nbsp;&nbsp;
+            <input type="checkbox" name="test"/>Sprayer&nbsp;&nbsp;
+            <input type="checkbox" name="test"/>Hot and Cold&nbsp;&nbsp;
+            <input type="checkbox" name="test"/>leaks&nbsp;&nbsp;
+            <input type="checkbox" name="test"/>Garbage Disposal&nbsp;&nbsp;
+            <h3>Counter&nbsp;&nbsp;</h3>
+            <input type="checkbox" name="test"/>secured&nbsp;&nbsp;
+            <input type="checkbox" name="test"/>Check Edges&nbsp;&nbsp;
+            <input type="checkbox" name="test"/>damages&nbsp;&nbsp;
+            <h3>Cabinet&nbsp;&nbsp;</h3>
+            <input type="checkbox" name="test"/>Doors loose aligned damages&nbsp;&nbsp;
+            <br></br>
+            <input type="checkbox" name="test"/>shelves loose hardware&nbsp;&nbsp;
+            <br></br>
+            <input type="checkbox" name="test"/>Paint Touch up&nbsp;&nbsp;
+            <br></br>
+            <input type="checkbox" name="test"/>Lazy Susan - Stable on Tracks&nbsp;&nbsp;
+            <br></br>
+            <input type="checkbox" name="test"/>Garbage Disposal&nbsp;&nbsp;
+            <h3>Wall/Ceiling/Floor&nbsp;&nbsp;</h3>
+            <input type="checkbox" name="test"/>Paint&nbsp;&nbsp;
+            <input type="checkbox" name="test"/>damages&nbsp;&nbsp;
+            <input type="checkbox" name="test"/>Stain&nbsp;&nbsp;
             </section>
           <section id="section-8">
             <h1>Bedroom&nbsp;&nbsp;</h1>
