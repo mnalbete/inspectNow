@@ -8,7 +8,8 @@ const propertySchema = new Schema({
     front_door: {        
         type: String},
     hvac: { type: String},
-    ceiling: { type: String}
+    ceiling: { type: String},
+    userId: {type: String}
 })
 
 const Property = mongoose.model("Property", propertySchema);
