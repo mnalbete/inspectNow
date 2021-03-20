@@ -9,7 +9,7 @@ module.exports = {
     },
     findOne: function(req, res) {
       db.Property
-        .findOne({id: req.params.id})
+        .findOne({_id: req.params.id})
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },
@@ -20,12 +20,14 @@ module.exports = {
         .then(dbUser => res.json(dbUser))
         .catch(err => res.status(422).json(err));
     },    
-    // update: function(req, res) {
-    //   db.Property
-    //     .findOneAndUpdate({ _id: req.params.id }, req.body)
-    //     .then(dbModel => res.json(dbModel))
-    //     .catch(err => res.status(422).json(err));
-    // },
+    update: function(req, res) {
+      let params = {};
+      for(let prop in req.body) if(req.body[prop]) params[prop] = req.body[prop];
+      db.Property
+        .findOneAndUpdate({ _id: req.params.id }, params, {new: true})
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
+    },
     remove: function(req, res) {
       db.Property
         .findById({ _id: req.params.id })
