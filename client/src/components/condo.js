@@ -1,7 +1,10 @@
 import '../App.css';
 
+
+
 function Condo() {
   return (
+    
     <div>
     <main>
       <nav>
@@ -26,43 +29,40 @@ function Condo() {
     <header>Header Centered</header>
     <div className="container">
           <section id="section-1">
-            <h1>Property INFO</h1>
-            <input type="checkbox" name="test"/>test&nbsp;&nbsp;
-            <input type="checkbox" name="test"/>test&nbsp;&nbsp;
-            <input type="checkbox" name="test"/>test&nbsp;&nbsp;
-            <input type="checkbox" name="test"/>test&nbsp;&nbsp;
-            <input type="checkbox" name="test"/>test&nbsp;&nbsp;
-            <input type="checkbox" name="test"/>test&nbsp;&nbsp;
-            <input type="checkbox" name="test"/>test&nbsp;&nbsp;
-            <input type="checkbox" name="test"/>test&nbsp;&nbsp;
-            <input type="checkbox" name="test"/>test&nbsp;&nbsp;
-            <input type="checkbox" name="test"/>test&nbsp;&nbsp;
-            <br></br>
-            <input type="checkbox" name="test"/>test&nbsp;&nbsp;
-            <br></br>
-            <input type="checkbox" name="test"/>test&nbsp;&nbsp;
-            <br></br>
-            <input type="checkbox" name="test"/>test&nbsp;&nbsp;
-            <br></br>
-            <input type="checkbox" name="test"/>test&nbsp;&nbsp;
-            <br></br>
-            <input type="checkbox" name="test"/>test&nbsp;&nbsp;
-            <br></br>
-            <input type="checkbox" name="test"/>test&nbsp;&nbsp;
-            <br></br>
-            <input type="checkbox" name="test"/>test&nbsp;&nbsp;
-            <br></br>
-            <input type="checkbox" name="test"/>test&nbsp;&nbsp;
-            <br></br>
-            <input type="checkbox" name="test"/>test&nbsp;&nbsp;
-            <br></br>
-            <input type="checkbox" name="test"/>test&nbsp;&nbsp;
+            <h1>Property INFO&nbsp;&nbsp;</h1>
+        <input type="email" class="form-control" id="info" aria-describedby="emailHelp" placeholder="Type Adress Here"></input>
+        <br/>
+       
+        <br/>
+        <div htmlFor="info" id="info">
+        This confidential report is prepared exclusively for:
+        </div>
+        <input type="text" id="info" className="form-control" />
+        <br />
+        <br />
+        <div htmlFor="info" id="info">
+        Prepared By:
+        </div>
+        <input type="text" id="info" className="form-control" />
+        <br />
+        <br />
+        <div htmlFor="info" id="info">
+        Report Number:
+        </div>
+        <input type="text" id="info" className="form-control" />
+        <br />
+        <br />
+        <div htmlFor="info" id="info">
+      <button onclick="{this.save}">
+        Save
+      </button>
+        </div>
             </section>
           <section id="section-2">
-            <h1>Overview</h1>
+            <h1>Overview&nbsp;&nbsp;</h1>
             </section>
           <section id="section-3">
-            <h1>Frontdoor</h1>
+            <h1>Frontdoor&nbsp;&nbsp;</h1>
             <input type="checkbox" name="test" ripple defaultChecked/>test&nbsp;&nbsp;
             <input type="checkbox" name="test"/>test&nbsp;&nbsp;
             <input type="checkbox" name="test"/>test&nbsp;&nbsp;
@@ -96,22 +96,22 @@ function Condo() {
             <input type="checkbox" name="test"/>test&nbsp;&nbsp;
             </section>
           <section id="section-4">
-            <h1>HVAC</h1>
+            <h1>HVAC&nbsp;&nbsp;</h1>
             </section>
           <section id="section-5">
-            <h1>Ceiling</h1>
+            <h1>Ceiling&nbsp;&nbsp;</h1>
             </section>
           <section id="section-6">
-            <h1>Kitchen</h1>
+            <h1>Kitchen&nbsp;&nbsp;</h1>
             </section>
           <section id="section-7">
-            <h1>Bathroom</h1>
+            <h1>Bathroom&nbsp;&nbsp;</h1>
             </section>
           <section id="section-8">
-            <h1>Bedroom</h1>
+            <h1>Bedroom&nbsp;&nbsp;</h1>
             </section>
             <section id="section-9">
-            <h1>Living Dining</h1>
+            <h1>Living Dining&nbsp;&nbsp;</h1>
             </section>
     </div>
   </div>
