@@ -30,8 +30,9 @@ module.exports = {
     },
     remove: function(req, res) {
       db.Property
-        .findById({ _id: req.params.id })
-        .then(dbModel => dbModel.remove())
+        .findByIdAndRemove({ _id: req.params.id })
+        // .then(dbModel => dbModel.remove())
+        .then(({ _id }) => db.User.findOneAndUpdate({_id: req.body.userId}, { $pull: { properties: _id } }, { new: true }))
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     }
