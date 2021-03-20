@@ -35,7 +35,7 @@ class API {
      */
     register( userData ) {
 
-        return this.axios.post("/api/register", userData);
+        return this.axios.post("/register", userData);
 
     }
 
@@ -49,14 +49,38 @@ class API {
      */
     login( userData ) {
 
-        return this.axios.post("/api/login", userData);
+        return this.axios.post("/login", userData);
 
     }
 
     authenticated() {
 
-        return this.axios.post("/api/authenticated");
+        return this.axios.post("/authenticated");
 
+    }
+
+    getAllProperties( userId ) {
+        return this.axios.get("api/properties", userId)
+    }
+
+    // create a property for a user
+    createProperty( userId ) {
+        return axios.post("/api/properties", userId);
+    }
+
+    // Gets one property by ID
+    getOneProperty( id ) {
+        return axios.get("/api/properties" + id);
+    }
+
+    // Gets book with the given ID
+    saveProperty( id, userId ) {
+    return axios.put("/api/peroperties/" + id, userId);
+    }
+
+    // Deletes property from db and user
+    deletePeroperty(id, userId) {
+        return axios.delete("/api/properties/" + id, userId);
     }
 
 }
