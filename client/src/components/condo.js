@@ -1,4 +1,5 @@
-import '../App.css';
+import './condo.css';
+
 
 
 
@@ -9,7 +10,7 @@ function Condo() {
     <main>
       <nav>
         <div className="nav-header">
-          <figure>
+          <figure id="logo">
             <img src="/images/logo.png" alt="" />
           </figure>
         </div>
@@ -26,10 +27,17 @@ function Condo() {
         </ul>
       </nav>
     </main>
-    <header>Header Centered</header>
+    <div>
+      <header>Export to PDF</header>
+      
+    </div>
+    
     <div className="container">
           <section id="section-1">
             <h1>Property INFO&nbsp;&nbsp;</h1>
+            <mainpic>
+            <img src="/images/insertimage.png" alt="" />
+          </mainpic>
         <input type="email" class="form-control" id="info" aria-describedby="emailHelp" placeholder="Type Adress Here"></input>
         <br/>
         <br/>
@@ -53,16 +61,23 @@ function Condo() {
         <br />
         <div htmlFor="info" id="info">
       <button onclick="{this.save}">
-        Save
+        Save Property INFO
       </button>
         </div>
             </section>
           <section id="section-2">
             <h1>Overview&nbsp;&nbsp;</h1>
-            </section>
+            <h3>THE SCOPE OF THE INSPECTION</h3>
+            <h5>
+            Please note that this is a visual inspection. All components designated for inspection in the Standards of Practice are inspected,
+except as may be noted in the “Limitations of Inspection” sections within this report. It is the goal of the inspection to put a home buyer in a better position to make a buying decision. Not all improvements will be identified during this inspection. Unexpected repairs should still be anticipated. The inspection should not be considered a guarantee or warranty of any kind. Please refer to the pre-inspection contract for a full explanation of the scope of the inspection.
+            </h5>
+            
+            </section>            
           <section id="section-3">
             <h1>Frontdoor&nbsp;&nbsp;</h1>
-            <input type="checkbox" name="test"/>peephole with knocker&nbsp;&nbsp;
+        <div> 
+        <input type="checkbox" name="test"/>peephole with knocker&nbsp;&nbsp;
             <br></br>
             <input type="checkbox" name="test"/>Swing&nbsp;&nbsp;
             <br></br>
@@ -78,7 +93,22 @@ function Condo() {
             <br></br>
             <input type="checkbox" name="test"/>Lights above front door&nbsp;&nbsp;
             <br></br>
-            <input type="checkbox" name="test"/>Wall around front door&nbsp;&nbsp;
+            <input type="checkbox" name="test"/>Wall around front door&nbsp;&nbsp; 
+            <br></br><br></br>Note
+        </div> 
+        <textarea style={{width: '100%', maxWidth: '100%'}} defaultValue={""} />
+        <div> 
+        <div className="side-by-side"> 
+        <div> 
+        <img src="/images/uploadimage.png" alt="" /> 
+        </div> 
+        <div> 
+        <img src="/images/uploadimage.png" alt="" /> 
+        </div> 
+      </div>
+        </div> 
+
+            
             </section>
           <section id="section-4">
             <h1>HVAC&nbsp;&nbsp;</h1>
@@ -91,7 +121,18 @@ function Condo() {
             <input type="checkbox" name="test"/>cooling&nbsp;&nbsp;
             <br></br>
             <input type="checkbox" name="test"/>register alignment&nbsp;&nbsp;
-            <br></br>
+            <br></br><br></br>Note
+            <textarea style={{width: '100%', maxWidth: '100%'}} defaultValue={""} />
+        <div> 
+        <div className="side-by-side"> 
+        <div> 
+        <img src="/images/uploadimage.png" alt="" /> 
+        </div> 
+        <div> 
+        <img src="/images/uploadimage.png" alt="" /> 
+        </div> 
+      </div>
+        </div> 
             </section>
           <section id="section-5">
             <h1>Ceiling&nbsp;&nbsp;</h1>
@@ -104,6 +145,18 @@ function Condo() {
             <input type="checkbox" name="test"/>Sprinklers&nbsp;&nbsp;
             <br></br>
             <input type="checkbox" name="test"/>Smoke detectors&nbsp;&nbsp;
+            <br></br><br></br>Note
+            <textarea style={{width: '100%', maxWidth: '100%'}} defaultValue={""} />
+        <div> 
+        <div className="side-by-side"> 
+        <div> 
+        <img src="/images/uploadimage.png" alt="" /> 
+        </div> 
+        <div> 
+        <img src="/images/uploadimage.png" alt="" /> 
+        </div> 
+      </div>
+        </div> 
             </section>
           <section id="section-6">
             <h1>Kitchen&nbsp;&nbsp;</h1>
@@ -155,6 +208,18 @@ function Condo() {
             <input type="checkbox" name="test"/>Paint&nbsp;&nbsp;
             <input type="checkbox" name="test"/>damages&nbsp;&nbsp;
             <input type="checkbox" name="test"/>Stain&nbsp;&nbsp;
+            <br></br><br></br>Note
+            <textarea style={{width: '100%', maxWidth: '100%'}} defaultValue={""} />
+        <div> 
+        <div className="side-by-side"> 
+        <div> 
+        <img src="/images/uploadimage.png" alt="" /> 
+        </div> 
+        <div> 
+        <img src="/images/uploadimage.png" alt="" /> 
+        </div> 
+      </div>
+        </div> 
             </section>
           <section id="section-7">
             <h1>Bathroom&nbsp;&nbsp;</h1>
@@ -209,12 +274,82 @@ function Condo() {
             <input type="checkbox" name="test"/>Paint&nbsp;&nbsp;
             <input type="checkbox" name="test"/>damages&nbsp;&nbsp;
             <input type="checkbox" name="test"/>Stain&nbsp;&nbsp;
+            <br></br><br></br>Note
+            <textarea style={{width: '100%', maxWidth: '100%'}} defaultValue={""} />
+        <div> 
+        <div className="side-by-side"> 
+        <div> 
+        <img src="/images/uploadimage.png" alt="" /> 
+        </div> 
+        <div> 
+        <img src="/images/uploadimage.png" alt="" /> 
+        </div> 
+      </div>
+        </div> 
             </section>
           <section id="section-8">
-            <h1>Bedroom&nbsp;&nbsp;</h1>
+          <h1>Bedroom&nbsp;&nbsp;</h1>
+            <input type="checkbox" name="test"/>door: handle, Latching, Scratches, Door stop, Strike plate&nbsp;&nbsp;
+            <br></br>
+            <input type="checkbox" name="test"/>Windows: Screen, sill, Blinds&nbsp;&nbsp;
+            <br></br>
+            <input type="checkbox" name="test"/>Switches&nbsp;&nbsp;
+            <br></br>
+            <input type="checkbox" name="test"/>lights&nbsp;&nbsp;
+            <br></br>
+            <input type="checkbox" name="test"/>Outlet&nbsp;&nbsp;
+            <br></br>
+            <input type="checkbox" name="test"/>Wall and ceiling&nbsp;&nbsp;
+            <br></br>
+            <input type="checkbox" name="test"/>Paint&nbsp;&nbsp;
+            <br></br>
+            <input type="checkbox" name="test"/>flooring&nbsp;&nbsp;
+            <br></br>
+            <input type="checkbox" name="test"/>Stain&nbsp;&nbsp;
+            <br></br><br></br>Note
+            <textarea style={{width: '100%', maxWidth: '100%'}} defaultValue={""} />
+        <div> 
+        <div className="side-by-side"> 
+        <div> 
+        <img src="/images/uploadimage.png" alt="" /> 
+        </div> 
+        <div> 
+        <img src="/images/uploadimage.png" alt="" /> 
+        </div> 
+      </div>
+        </div> 
             </section>
             <section id="section-9">
             <h1>Living Dining&nbsp;&nbsp;</h1>
+            <input type="checkbox" name="test"/>Switches&nbsp;&nbsp;
+            <br></br>
+            <input type="checkbox" name="test"/>lights&nbsp;&nbsp;
+            <br></br>
+            <input type="checkbox" name="test"/>Outlet&nbsp;&nbsp;
+            <br></br>
+            <input type="checkbox" name="test"/>Molding&nbsp;&nbsp;
+            <br></br>
+            <input type="checkbox" name="test"/>Trim&nbsp;&nbsp;
+            <br></br>
+            <input type="checkbox" name="test"/>Wall and ceiling&nbsp;&nbsp;
+            <br></br>
+            <input type="checkbox" name="test"/>Paint&nbsp;&nbsp;
+            <br></br>
+            <input type="checkbox" name="test"/>flooring&nbsp;&nbsp;
+            <br></br>
+            <input type="checkbox" name="test"/>Stain&nbsp;&nbsp;
+            <br></br><br></br>Note
+            <textarea style={{width: '100%', maxWidth: '100%'}} defaultValue={""} />
+        <div> 
+        <div className="side-by-side"> 
+        <div> 
+        <img src="/images/uploadimage.png" alt="" /> 
+        </div> 
+        <div> 
+        <img src="/images/uploadimage.png" alt="" /> 
+        </div> 
+      </div>
+        </div> 
             </section>
     </div>
   </div>
