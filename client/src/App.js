@@ -19,6 +19,8 @@ class App extends React.Component {
         <div>
           <Head />
           <Body />
+          {/* <Login /> */}
+
           </div>
       )
     }
