@@ -10,7 +10,7 @@ function Condo() {
     <main>
       <nav>
         <div className="nav-header">
-          <figure>
+          <figure id="logo">
             <img src="/images/logo.png" alt="" />
           </figure>
         </div>
@@ -28,13 +28,16 @@ function Condo() {
       </nav>
     </main>
     <div>
-      <header>Header Centered&nbsp;&nbsp;&nbsp;&nbsp;</header>
+      <header>Export to PDF</header>
       
     </div>
     
     <div className="container">
           <section id="section-1">
             <h1>Property INFO&nbsp;&nbsp;</h1>
+            <mainpic>
+            <img src="/images/insertimage.png" alt="" />
+          </mainpic>
         <input type="email" class="form-control" id="info" aria-describedby="emailHelp" placeholder="Type Adress Here"></input>
         <br/>
         <br/>
@@ -69,31 +72,12 @@ function Condo() {
             Please note that this is a visual inspection. All components designated for inspection in the Standards of Practice are inspected,
 except as may be noted in the “Limitations of Inspection” sections within this report. It is the goal of the inspection to put a home buyer in a better position to make a buying decision. Not all improvements will be identified during this inspection. Unexpected repairs should still be anticipated. The inspection should not be considered a guarantee or warranty of any kind. Please refer to the pre-inspection contract for a full explanation of the scope of the inspection.
             </h5>
-            <h3>AN INSPECTION VERSUS A WARRANTY</h3>
-            <h5>
-            A home inspection is just what the name indicates, an inspection of a home...usually a home that is being
-purchased. The purpose of the inspection is to determine the condition of the various systems and structures
-of the home. While an inspection performed by a competent inspection company will determine the condition
-of the major components of the home, no inspection will pick up every minute latent defect. The inspector’s
-ability to find all defects is limited by access to various parts of the property, lack of information about the
-property and many other factors. A good inspector will do his or her level best to determine the condition of
-the home and to report it accurately. The report that is issued is an opinion as to the condition of the home.
-This opinion is arrived at by the best technical methods available to the home inspection industry. It is still
-only an opinion.
-A warranty is a policy sold to the buyer that warrants that specific items in the home are in sound condition
-and will remain in sound condition for a specified period of time. Typically, the warranty company never
-inspects the home. The warranty company uses actuarial tables to determine the expected life of the
-warranted items and charges the customer a fee for the warranty that will hopefully cover any projected loss
-and make a profit for the warranty seller. It is essentially an insurance policy
-.
-The service that we have provided you is an inspection. We make no warranty of this property. If you
-desire warranty coverage, please see your real estate agent for details about any warranty plan to which
-their firm may have access.
-            </h5>
-            </section>
+            
+            </section>            
           <section id="section-3">
             <h1>Frontdoor&nbsp;&nbsp;</h1>
-            <input type="checkbox" name="test"/>peephole with knocker&nbsp;&nbsp;
+        <div> 
+        <input type="checkbox" name="test"/>peephole with knocker&nbsp;&nbsp;
             <br></br>
             <input type="checkbox" name="test"/>Swing&nbsp;&nbsp;
             <br></br>
@@ -109,7 +93,22 @@ their firm may have access.
             <br></br>
             <input type="checkbox" name="test"/>Lights above front door&nbsp;&nbsp;
             <br></br>
-            <input type="checkbox" name="test"/>Wall around front door&nbsp;&nbsp;
+            <input type="checkbox" name="test"/>Wall around front door&nbsp;&nbsp; 
+            <br></br><br></br>Note
+        </div> 
+        <textarea style={{width: '100%', maxWidth: '100%'}} defaultValue={""} />
+        <div> 
+        <div className="side-by-side"> 
+        <div> 
+        <img src="/images/uploadimage.png" alt="" /> 
+        </div> 
+        <div> 
+        <img src="/images/uploadimage.png" alt="" /> 
+        </div> 
+      </div>
+        </div> 
+
+            
             </section>
           <section id="section-4">
             <h1>HVAC&nbsp;&nbsp;</h1>
@@ -122,7 +121,18 @@ their firm may have access.
             <input type="checkbox" name="test"/>cooling&nbsp;&nbsp;
             <br></br>
             <input type="checkbox" name="test"/>register alignment&nbsp;&nbsp;
-            <br></br>
+            <br></br><br></br>Note
+            <textarea style={{width: '100%', maxWidth: '100%'}} defaultValue={""} />
+        <div> 
+        <div className="side-by-side"> 
+        <div> 
+        <img src="/images/uploadimage.png" alt="" /> 
+        </div> 
+        <div> 
+        <img src="/images/uploadimage.png" alt="" /> 
+        </div> 
+      </div>
+        </div> 
             </section>
           <section id="section-5">
             <h1>Ceiling&nbsp;&nbsp;</h1>
@@ -135,6 +145,18 @@ their firm may have access.
             <input type="checkbox" name="test"/>Sprinklers&nbsp;&nbsp;
             <br></br>
             <input type="checkbox" name="test"/>Smoke detectors&nbsp;&nbsp;
+            <br></br><br></br>Note
+            <textarea style={{width: '100%', maxWidth: '100%'}} defaultValue={""} />
+        <div> 
+        <div className="side-by-side"> 
+        <div> 
+        <img src="/images/uploadimage.png" alt="" /> 
+        </div> 
+        <div> 
+        <img src="/images/uploadimage.png" alt="" /> 
+        </div> 
+      </div>
+        </div> 
             </section>
           <section id="section-6">
             <h1>Kitchen&nbsp;&nbsp;</h1>
@@ -186,6 +208,18 @@ their firm may have access.
             <input type="checkbox" name="test"/>Paint&nbsp;&nbsp;
             <input type="checkbox" name="test"/>damages&nbsp;&nbsp;
             <input type="checkbox" name="test"/>Stain&nbsp;&nbsp;
+            <br></br><br></br>Note
+            <textarea style={{width: '100%', maxWidth: '100%'}} defaultValue={""} />
+        <div> 
+        <div className="side-by-side"> 
+        <div> 
+        <img src="/images/uploadimage.png" alt="" /> 
+        </div> 
+        <div> 
+        <img src="/images/uploadimage.png" alt="" /> 
+        </div> 
+      </div>
+        </div> 
             </section>
           <section id="section-7">
             <h1>Bathroom&nbsp;&nbsp;</h1>
@@ -240,6 +274,18 @@ their firm may have access.
             <input type="checkbox" name="test"/>Paint&nbsp;&nbsp;
             <input type="checkbox" name="test"/>damages&nbsp;&nbsp;
             <input type="checkbox" name="test"/>Stain&nbsp;&nbsp;
+            <br></br><br></br>Note
+            <textarea style={{width: '100%', maxWidth: '100%'}} defaultValue={""} />
+        <div> 
+        <div className="side-by-side"> 
+        <div> 
+        <img src="/images/uploadimage.png" alt="" /> 
+        </div> 
+        <div> 
+        <img src="/images/uploadimage.png" alt="" /> 
+        </div> 
+      </div>
+        </div> 
             </section>
           <section id="section-8">
           <h1>Bedroom&nbsp;&nbsp;</h1>
@@ -260,6 +306,18 @@ their firm may have access.
             <input type="checkbox" name="test"/>flooring&nbsp;&nbsp;
             <br></br>
             <input type="checkbox" name="test"/>Stain&nbsp;&nbsp;
+            <br></br><br></br>Note
+            <textarea style={{width: '100%', maxWidth: '100%'}} defaultValue={""} />
+        <div> 
+        <div className="side-by-side"> 
+        <div> 
+        <img src="/images/uploadimage.png" alt="" /> 
+        </div> 
+        <div> 
+        <img src="/images/uploadimage.png" alt="" /> 
+        </div> 
+      </div>
+        </div> 
             </section>
             <section id="section-9">
             <h1>Living Dining&nbsp;&nbsp;</h1>
@@ -280,6 +338,18 @@ their firm may have access.
             <input type="checkbox" name="test"/>flooring&nbsp;&nbsp;
             <br></br>
             <input type="checkbox" name="test"/>Stain&nbsp;&nbsp;
+            <br></br><br></br>Note
+            <textarea style={{width: '100%', maxWidth: '100%'}} defaultValue={""} />
+        <div> 
+        <div className="side-by-side"> 
+        <div> 
+        <img src="/images/uploadimage.png" alt="" /> 
+        </div> 
+        <div> 
+        <img src="/images/uploadimage.png" alt="" /> 
+        </div> 
+      </div>
+        </div> 
             </section>
     </div>
   </div>
