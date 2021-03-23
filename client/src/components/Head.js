@@ -1,11 +1,15 @@
+import {useLogout} from "../utils/auth.js"
 
-function Landing() {
-      return (
+function Head() {
   
-<nav className="navbar navbar-expand-lg navbar-light float-right">
+  const logout = useLogout();
+  
+  return (
+  
+      <nav className="navbar navbar-expand-lg navbar-light float-right">
  
             <form className="d-flex">
-              <button className="btn btn-outline-success float-right" type="submit">Login</button>
+              <button className="btn btn-outline-success float-right" type="submit" onClick={logout}>Logout</button>
             </form>
 
       </nav>
@@ -13,4 +17,4 @@ function Landing() {
   }
 
 
-  export default Landing
+  export default Head
