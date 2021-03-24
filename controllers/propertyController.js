@@ -17,8 +17,8 @@ module.exports = {
        console.log(req.body.userId);
       db.Property
         .create(req.body)
+        .then(dbProp => res.json(dbProp))
         .then(({ _id }) => db.User.findOneAndUpdate({_id: req.body.userId}, { $push: { properties: _id } }, { new: true }))
-        .then(dbUser => res.json(dbUser))
         .catch(err => res.status(422).json(err));
     },    
     update: function(req, res) {
