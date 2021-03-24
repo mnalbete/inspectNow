@@ -1,8 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import Condo from "./components/condo"
-import Head from "./components/Head"
-import Body from "./components/Body"
+import Main from "./components/Main"
 import List from "./components/List"
 import Login from "./components/Login"
 import RegistrationForm from "./components/RegistrationForm"
@@ -22,7 +21,7 @@ class App extends React.Component {
       <div>
         <Switch>
         <Route exact path="/">
-            <Body />
+            <Main />
           </Route>
           <Route exact path="/register">
             <RegistrationForm />
