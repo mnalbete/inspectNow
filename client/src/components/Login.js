@@ -21,11 +21,14 @@
 
 import {useRef} from "react";
 import {useLogin} from '../utils/auth';
+import { useHistory } from 'react-router-dom';
+import { NavLink } from 'react-router-dom'
 
     function Login() {
 
       const emailRef = useRef();
       const passwordRef = useRef();
+      const history = useHistory();
   
       // Get the helper login function from the `useLogin` hook.
       const login = useLogin();
@@ -41,6 +44,8 @@ import {useLogin} from '../utils/auth';
               await login({ email, password });
 
               console.log("login successful!!");
+              const path = `/`;
+              history.push(path);
   
               // User has been successfully logged in and added to state. Perform any additional actions you need here such as redirecting to a new page.
   
@@ -57,7 +62,8 @@ import {useLogin} from '../utils/auth';
               <h2>Login</h2>
               <input type="text" ref={emailRef} placeholder="Your email" /><br />
               <input type="password" ref={passwordRef} placeholder="Your password" /><br />
-              <button>Submit</button>
+              <button >Login </button>
+              {/* <NavLink to="/"> Login </NavLink> */}
           </form>
       )
   
