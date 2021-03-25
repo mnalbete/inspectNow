@@ -30,7 +30,7 @@ class App extends React.Component {
           <Route exact path="/api/properties/:id">
             <Condo />
           </Route>
-          <Route exact path="/api/properties">
+          <Route exact path="/properties">
             <List />
           </Route>
         </Switch>

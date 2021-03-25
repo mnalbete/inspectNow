@@ -59,12 +59,12 @@ class API {
 
     }
 
-    getAllProperties( userId ) {
-        return this.axios.get("api/properties", userId)
+    getAllProperties( ) {
+        return this.axios.get("/api/properties")
     }
 
     // create a property for a user
-    createProperty( userId ) {
+    createProperty(userId) {
         return axios.post("/api/properties", userId);
     }
 
@@ -74,13 +74,13 @@ class API {
     }
 
     // Gets book with the given ID
-    saveProperty( id, userId ) {
-    return axios.put("/api/peroperties/" + id, userId);
+    saveProperty( id) {
+    return axios.put("/api/peroperties/" + id);
     }
 
     // Deletes property from db and user
-    deletePeroperty(id, userId) {
-        return axios.delete("/api/properties/" + id, userId);
+    deleteProperty(id) {
+        return axios.delete("/api/properties/" + id);
     }
 
 }

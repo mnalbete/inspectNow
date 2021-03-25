@@ -3,7 +3,7 @@ const db = require("../models");
 module.exports = {
     findAll: function(req, res) {
       db.Property
-      .find({userId: req.body.userId})
+      .find({userId: req.user._id})
       .then(dbProp => { res.json(dbProp);})
       .catch(err => { res.json(err);})
     },
@@ -14,11 +14,10 @@ module.exports = {
         .catch(err => res.status(422).json(err));
     },
     create: function(req, res) {
-       console.log(req.body.userId);
       db.Property
         .create(req.body)
-        .then(dbProp => res.json(dbProp))
         .then(({ _id }) => db.User.findOneAndUpdate({_id: req.body.userId}, { $push: { properties: _id } }, { new: true }))
+        .then(dbUser => res.json(dbUser))
         .catch(err => res.status(422).json(err));
     },    
     update: function(req, res) {
@@ -30,10 +29,12 @@ module.exports = {
         .catch(err => res.status(422).json(err));
     },
     remove: function(req, res) {
+      let user_id = req.user._id;
+      console.log(user_id);
       db.Property
         .findByIdAndRemove({ _id: req.params.id })
         // .then(dbModel => dbModel.remove())
-        .then(({ _id }) => db.User.findOneAndUpdate({_id: req.body.userId}, { $pull: { properties: _id } }, { new: true }))
+        .then(({ _id }) => db.User.findOneAndUpdate({_id: user_id}, { $pull: { properties: _id } }, { new: true }))
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     }
