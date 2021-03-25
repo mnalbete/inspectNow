@@ -1,10 +1,14 @@
 const router = require("express").Router();
 const propertyController = require("../../controllers/propertyController");
 
+// Matches with "/api/properties/list"
+// router.route("/list")
+  // .get(propertyController.findAll)
+
 // Matches with "/api/properties"
 router.route("/")
-  // .get(propertyController.findAll)
-  .post(propertyController.create);
+  .post(propertyController.create)
+  .get(propertyController.findAll);
 
 // Matches with "/api/properties/:id"
 router.route("/:id")
