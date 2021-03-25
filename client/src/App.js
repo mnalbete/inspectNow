@@ -6,34 +6,37 @@ import List from "./components/List"
 import Login from "./components/Login"
 import RegistrationForm from "./components/RegistrationForm"
 import bootstrap from "bootstrap/dist/css/bootstrap.min.css"
+import useIsAuthenticated from "./utils/auth"
+import PrivateRoute from "./components/PrivateRoute"
+import GuestRoute from "./components/GuestRoute"
 
 
 
 
 
-class App extends React.Component {
+function App()  {
 
   
   
-  render(){
+  
     return (
       <Router>
       <div>
         <Switch>
-        <Route exact path="/">
+          <PrivateRoute exact path="/" redirectTo= "/login">
             <Main />
-          </Route>
-          <Route exact path="/register">
+          </PrivateRoute>
+          <GuestRoute exact path="/register" redirectTo= "/">
             <RegistrationForm />
-          </Route>
-          <Route exact path="/login">
+          </GuestRoute>
+          <GuestRoute exact path="/login" redirectTo= "/">
             <Login />
-          </Route>
+          </GuestRoute>
         </Switch>
       </div>
     </Router>
       )
     }
-  }
+  
   
   export default App;
