@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import Condo from "./components/condo"
-import Head from "./components/Head"
-import Body from "./components/Body"
+import Main from "./components/Main"
 import List from "./components/List"
 import Login from "./components/Login"
 import RegistrationForm from "./components/RegistrationForm"
@@ -17,13 +17,21 @@ class App extends React.Component {
   
   render(){
     return (
-        <div>
-          <Head />
-          <Body />
-          <RegistrationForm />
-          <Login />
-
-          </div>
+      <Router>
+      <div>
+        <Switch>
+        <Route exact path="/">
+            <Main />
+          </Route>
+          <Route exact path="/register">
+            <RegistrationForm />
+          </Route>
+          <Route exact path="/login">
+            <Login />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
       )
     }
   }

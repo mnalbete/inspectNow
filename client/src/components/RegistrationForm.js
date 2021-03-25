@@ -1,10 +1,12 @@
 import {useRef} from "react";
 import {useLogin} from '../utils/auth';
 import api from '../utils/api';
+import { useHistory } from 'react-router-dom';
 function RegistrationForm() {
 
     const emailRef = useRef();
     const passwordRef = useRef();
+    const history = useHistory();
 
     // Get the helper login function from the `useLogin` hook.
     const login = useLogin();
@@ -22,6 +24,9 @@ function RegistrationForm() {
 
             // User has been successfully registered, now log them in with the same information.
             await login({ email, password });
+
+            const path = `/`;
+            history.push(path);
 
             // User has been successfully registered, logged in and added to state. Perform any additional actions you need here such as redirecting to a new page.
 
