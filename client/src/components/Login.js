@@ -22,7 +22,8 @@
 import {useRef} from "react";
 import {useLogin} from '../utils/auth';
 import { useHistory } from 'react-router-dom';
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+
 
     function Login() {
 
@@ -58,13 +59,17 @@ import { NavLink } from 'react-router-dom'
       }
   
       return (
-          <form onSubmit={handleSubmit}>
-              <h2>Login</h2>
-              <input type="text" ref={emailRef} placeholder="Your email" /><br />
-              <input type="password" ref={passwordRef} placeholder="Your password" /><br />
-              <button >Login </button>
-              {/* <NavLink to="/"> Login </NavLink> */}
-          </form>
+        <body style={{ backgroundImage: "url(/images/background.png)", backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}>
+            <div class="row justify-content-md-center vh-100">
+                <form onSubmit={handleSubmit}>
+                    <h2>Login</h2>
+                    <input type="text" ref={emailRef} placeholder="Your email" /><br />
+                    <input type="password" ref={passwordRef} placeholder="Your password" /><br />
+                    <button className="btn btn-success" >Login </button>
+                </form>
+                <Link class= "text-success" to="/register"> Not a member? Register here. </Link>
+            </div>
+        </body>
       )
   
   }

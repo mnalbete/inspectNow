@@ -2,6 +2,8 @@ import {useRef} from "react";
 import {useLogin} from '../utils/auth';
 import api from '../utils/api';
 import { useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom'
+
 function RegistrationForm() {
 
     const emailRef = useRef();
@@ -39,12 +41,17 @@ function RegistrationForm() {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <h2>Register</h2>
-            <input type="text" ref={emailRef} placeholder="Your email" /><br />
-            <input type="password" ref={passwordRef} placeholder="Your password" /><br />
-            <button>Submit</button>
-        </form>
+        <body style={{ backgroundImage: "url(/images/background.png)", backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}>
+            <div class="row justify-content-md-center vh-100">
+                <form onSubmit={handleSubmit}>
+                    <h2>Register</h2>
+                    <input type="text" ref={emailRef} placeholder="Your email" /><br />
+                    <input type="password" ref={passwordRef} placeholder="Your password" /><br />
+                    <button className="btn btn-success" >Register</button>
+                </form>
+                <Link class= "text-success" to="/login"> Already a member? Login here. </Link>
+            </div>
+        </body>
     )
 
 }

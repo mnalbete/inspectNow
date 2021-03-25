@@ -1,13 +1,21 @@
 import "./condo.css";
 import api from "../utils/api";
+import { useHistory } from 'react-router-dom';
 
 function Condo() {
 
-  function handleFormSubmit((event) => {
+  const history = useHistory();
+  console.log(history.location.pathname);
+  const pathname = history.location.pathname;
+  const pathnameArray = pathname.split("/");
+  const propertyId = pathnameArray[3];
+  console.log(propertyId);
+
+  const handleFormSubmit = (event) => {
     // save to database
     event.preventDefault();
-    api.createProperty  
-  });
+    api.saveProperty();
+  };
 
   return (
     <div>
@@ -89,25 +97,8 @@ function Condo() {
             <br />
             <br />
             <div htmlFor="info" id="info">
-              <button onclick="{this.save}">Save Property INFO</button>
+              <button onclick={handleFormSubmit} value="submit">Save Property INFO</button>
             </div>
-            <div class="block">
-              <a class="button">Button</a>
-              <a class="button is-white">White</a>
-              <a class="button is-light">Light</a>
-              <a class="button is-dark">Dark</a>
-              <a class="button is-black">Black</a>
-              <a class="button is-link">Link</a>
-            </div>
-            <div class="block">
-              <a class="button is-primary">Primary</a>
-              <a class="button is-info">Info</a>
-              <a class="button is-success">Success</a>
-              <a class="button is-warning">Warning</a>
-              <a class="button is-danger">Danger</a>
-            </div>
-            <button onclick= { handleFormSubmit } value="submit">Save
-            </button>
           </form>
         </section>
 
@@ -175,7 +166,9 @@ function Condo() {
                   </div>
                 </div>
               </div>
-              <button onclick=  {}>save</button>
+              <div htmlFor="info" id="info">
+                <button onclick={handleFormSubmit} value="submit">Save Property INFO</button>
+              </div>
             </form>
           </div>
         </section>
