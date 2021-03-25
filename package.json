@@ -1,7 +1,7 @@
 {
   "name": "mern",
   "version": "1.0.0",
-  "description": "",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -16,20 +16,32 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^4.1.0",
+    "concurrently": "^6.0.0",
     "nodemon": "^1.18.7"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
     "bootstrap": "^4.6.0",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
-    "express": "^4.16.3",
+    "express": "^4.17.1",
     "fastest-validator": "^1.10.0",
     "if-env": "^1.0.4",
-    "react-dom": "^17.0.1",
-    "mongoose": "^5.12.0",
+    "mongodb": "^3.6.4",
+    "mongoose": "^5.12.2",
     "passport": "^0.4.1",
-    "passport-jwt": "^4.0.0"
-  }
+    "passport-jwt": "^4.0.0",
+    "react-dom": "^17.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mnalbete/inspectNow.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/mnalbete/inspectNow/issues"
+  },
+  "homepage": "https://github.com/mnalbete/inspectNow#readme"
 }

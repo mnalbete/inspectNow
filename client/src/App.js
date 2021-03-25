@@ -2,10 +2,11 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import Condo from "./components/condo"
 import Main from "./components/Main"
-import List from "./components/List"
+import List from "./components/list"
 import Login from "./components/Login"
 import RegistrationForm from "./components/RegistrationForm"
 import bootstrap from "bootstrap/dist/css/bootstrap.min.css"
+
 
 
 
