@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Main from "./components/Main"
 import List from "./components/List"
 import Login from "./components/Login"
+import Condo from "./components/Condo"
 import RegistrationForm from "./components/RegistrationForm"
 import bootstrap from "bootstrap/dist/css/bootstrap.min.css"
 import useIsAuthenticated from "./utils/auth"
