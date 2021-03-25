@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 function Body() {
   const user = useAuthenticatedUser();
   const history = useHistory();
-  console.log(user);
+ 
   const handleSubmit = async e => {
     e.preventDefault();
 

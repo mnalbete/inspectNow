@@ -15,17 +15,11 @@ import GuestRoute from "./components/GuestRoute"
 
 
 
-<<<<<<< HEAD
-
-class App extends React.Component {
-  render(){
-=======
 function App()  {
 
   
   
   
->>>>>>> e987d82c50bc08a8873f20216a4c94f304265681
     return (
       <Router>
       <div>

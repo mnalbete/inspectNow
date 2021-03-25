@@ -8,14 +8,18 @@ function Condo() {
   console.log(history.location.pathname);
   const pathname = history.location.pathname;
   const pathnameArray = pathname.split("/");
+  // use property id to go into the form to save the data
   const propertyId = pathnameArray[3];
   console.log(propertyId);
 
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = (e) => {
     // save to database
-    event.preventDefault();
+    e.preventDefault();
     api.saveProperty();
-  };
+    // const email = emailRef.current.value;
+    // console.log(email);
+    // const address = homeaddress.current.value;
+    };
 
   return (
     <div>
