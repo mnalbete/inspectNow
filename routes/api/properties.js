@@ -15,6 +15,6 @@ router.route("/")
 router.route("/:id")
   .get(propertyController.findOne)
   .put(propertyController.update)
-  .delete(authenticatedUser, propertyController.remove);
+  .delete(propertyController.remove);
 
 module.exports = router;

@@ -28,14 +28,24 @@ module.exports = {
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },
-    remove: function(req, res) {
-      let user_id = req.user._id;
-      console.log(user_id);
-      db.Property
-        .findByIdAndRemove({ _id: req.params.id })
-        // .then(dbModel => dbModel.remove())
-        .then(({ _id }) => db.User.findOneAndUpdate({_id: user_id}, { $pull: { properties: _id } }, { new: true }))
-        .then(dbModel => res.json(dbModel))
-        .catch(err => res.status(422).json(err));
+  remove: function (req, res) {
+    let user_id;
+    db.Property
+      .findById({ _id: req.params.id })
+      .then(dbModel => {
+        user_id = dbModel.userId;
+        dbModel.remove();
+      })
+      .then(() => db.User.findOneAndUpdate({ _id: user_id }, { $pull: { properties: req.params.id } }, { new: true }))
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+
+      // db.Property
+      // .findById({ _id: req.params.id })
+      // .then(dbModel => {
+      //   dbModel.remove(); })
+      //   .then(() => db.User.findOneAndUpdate({_id: req.user._id}, { $pull: { properties: req.params.id } }, { new: true }))
+      //   .then(dbModel => res.json(dbModel))
+      //   .catch(err => res.status(422).json(err));
     }
   };

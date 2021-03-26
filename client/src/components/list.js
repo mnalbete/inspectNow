@@ -41,7 +41,6 @@ function List() {
   //   }
   // }
   function deleteProperty(id) {
-    console.log(id);
     api.deleteProperty(id)
       .then(res => loadProperties())
       .catch(err => console.log(err));
@@ -57,7 +56,7 @@ function List() {
         return (
           <a href="#" className="list-group-item list-group-item-action">
             <div className="d-flex w-100 justify-content-between">
-              <h5 className="mb-1">{property.userId}</h5>
+              <h5 className="mb-1">{property._id}</h5>
               <button onClick={() => {history.push(`/api/properties/` + property._id)}}>Edit </button>
               <button onClick={() => {deleteProperty(property._id)}}>Delete </button>
               <small className="text-muted">3 days ago</small>
