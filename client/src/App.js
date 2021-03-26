@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import Condo from "./components/condo"
 import Main from "./components/Main"
-import List from "./components/list"
+import List from "./components/List"
 import Login from "./components/Login"
 import Condo from "./components/Condo"
 import RegistrationForm from "./components/RegistrationForm"

@@ -6,10 +6,6 @@ import { useHistory } from 'react-router-dom';
 function Body() {
   const user = useAuthenticatedUser();
   const history = useHistory();
-<<<<<<< HEAD
- 
-=======
->>>>>>> 89041d5b5affb3d0f20bbed3e3c25edb0e2c8439
   const handleSubmit = async e => {
     e.preventDefault();
 
