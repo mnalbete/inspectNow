@@ -7,26 +7,32 @@ import Login from "./components/Login"
 import Condo from "./components/Condo"
 import RegistrationForm from "./components/RegistrationForm"
 import bootstrap from "bootstrap/dist/css/bootstrap.min.css"
+import useIsAuthenticated from "./utils/auth"
+import PrivateRoute from "./components/PrivateRoute"
+import GuestRoute from "./components/GuestRoute"
 
 
 
 
 
-class App extends React.Component {
-  render(){
+function App()  {
+
+  
+  
+  
     return (
       <Router>
       <div>
         <Switch>
-        <Route exact path="/">
+          <PrivateRoute exact path="/" redirectTo= "/login">
             <Main />
-          </Route>
-          <Route exact path="/register">
+          </PrivateRoute>
+          <GuestRoute exact path="/register" redirectTo= "/">
             <RegistrationForm />
-          </Route>
-          <Route exact path="/login">
+          </GuestRoute>
+          <GuestRoute exact path="/login" redirectTo= "/">
             <Login />
-          </Route>
+          </GuestRoute>
           <Route exact path="/api/properties/:id">
             <Condo />
           </Route>
@@ -38,6 +44,6 @@ class App extends React.Component {
     </Router>
       )
     }
-  }
+  
   
   export default App;
