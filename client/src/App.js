@@ -33,12 +33,12 @@ function App()  {
           <GuestRoute exact path="/login" redirectTo= "/">
             <Login />
           </GuestRoute>
-          <Route exact path="/api/properties/:id">
+          <PrivateRoute exact path="/api/properties/:id">
             <Condo />
-          </Route>
-          <Route exact path="/properties">
+          </PrivateRoute>
+          <PrivateRoute exact path="/properties">
             <List />
-          </Route>
+          </PrivateRoute>
         </Switch>
       </div>
     </Router>

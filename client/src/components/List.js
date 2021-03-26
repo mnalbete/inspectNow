@@ -4,8 +4,6 @@ import React, { useEffect, useState } from "react";
 import api from '../utils/api';
 import {useAuthenticatedUser} from '../utils/auth';
 import { useHistory } from 'react-router-dom';
-import { Link } from "react-router-dom";
-
 
 
 function List() {
@@ -57,12 +55,9 @@ function List() {
           <a href="#" className="list-group-item list-group-item-action">
             <div className="d-flex w-100 justify-content-between">
               <h5 className="mb-1">{property._id}</h5>
-              <button onClick={() => {history.push(`/api/properties/` + property._id)}}>Edit </button>
-              <button onClick={() => {deleteProperty(property._id)}}>Delete </button>
-              <small className="text-muted">3 days ago</small>
+              <button className="btn btn-primary" onClick={() => {history.push(`/api/properties/` + property._id)}}>Edit </button>
+              <button className="btn btn-danger" onClick={() => {deleteProperty(property._id)}}>Delete </button>
             </div>
-            <p className="mb-1">Some placeholder content in a paragraph.</p>
-            <small className="text-muted">And some muted small print.</small>
           </a>);
       })
       ) : (
