@@ -2,10 +2,14 @@ import api from '../utils/api';
 import {useAuthenticatedUser} from '../utils/auth';
 import { useHistory } from 'react-router-dom';
 
+
 function Body() {
   const user = useAuthenticatedUser();
   const history = useHistory();
+<<<<<<< HEAD
  
+=======
+>>>>>>> 89041d5b5affb3d0f20bbed3e3c25edb0e2c8439
   const handleSubmit = async e => {
     e.preventDefault();
 
@@ -13,10 +17,12 @@ function Body() {
 
     try {
 
-      let property = await api.createProperty({ userId: user._id });
-
-      console.log(property.data._id);
-      const path = `/api/properties/` + property.data._id;
+      let property = await api.createProperty({userId : user._id});
+      let array = property.data.properties;
+      let len = property.data.properties.length
+      console.log(property.data.properties[len -1]);
+      let currentPropertyId = property.data.properties[len -1];
+      const path = `/api/properties/` + currentPropertyId;
       history.push(path);
       // User has been successfully logged in and added to state. Perform any additional actions you need here such as redirecting to a new page.
 
@@ -33,7 +39,7 @@ function Body() {
 
 
     try {
-      const path = `/api/properties/`;
+      const path = `/properties`;
       history.push(path);
       // User has been successfully logged in and added to state. Perform any additional actions you need here such as redirecting to a new page.
 

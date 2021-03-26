@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const propertyController = require("../../controllers/propertyController");
+const authenticatedUser = require("../middleware/authenticateUser");
 
 // Matches with "/api/properties/list"
 // router.route("/list")
@@ -8,7 +9,7 @@ const propertyController = require("../../controllers/propertyController");
 // Matches with "/api/properties"
 router.route("/")
   .post(propertyController.create)
-  .get(propertyController.findAll);
+  .get(authenticatedUser, propertyController.findAll);
 
 // Matches with "/api/properties/:id"
 router.route("/:id")

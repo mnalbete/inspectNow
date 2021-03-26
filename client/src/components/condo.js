@@ -8,17 +8,17 @@ function Condo() {
   console.log(history.location.pathname);
   const pathname = history.location.pathname;
   const pathnameArray = pathname.split("/");
-  // use property id to go into the form to save the data
   const propertyId = pathnameArray[3];
   console.log(propertyId);
-
-  const handleFormSubmit = (e) => {
+  
+  const handleFormSubmit= (e) => {
     // save to database
     e.preventDefault();
-    api.saveProperty();
-    // const email = emailRef.current.value;
-    // console.log(email);
-    // const address = homeaddress.current.value;
+
+    
+   api.saveProperty();
+   
+    
     };
 
   return (
@@ -79,6 +79,7 @@ function Condo() {
               id="info"
               aria-describedby="emailHelp"
               placeholder="Type Adress Here"
+              ref
             ></input>
             <br />
             <br />
@@ -101,7 +102,7 @@ function Condo() {
             <br />
             <br />
             <div htmlFor="info" id="info">
-              <button onclick={handleFormSubmit} value="submit">Save Property INFO</button>
+              {/* <button onclick={handleFormSubmit} value="submit">Save Property INFO</button> */}
             </div>
           </form>
         </section>
@@ -171,7 +172,7 @@ function Condo() {
                 </div>
               </div>
               <div htmlFor="info" id="info">
-                <button onclick={handleFormSubmit} value="submit">Save Property INFO</button>
+                {/* <button onclick={handleFormSubmit} value="submit">Save Property INFO</button> */}
               </div>
             </form>
           </div>

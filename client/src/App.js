@@ -33,6 +33,12 @@ function App()  {
           <GuestRoute exact path="/login" redirectTo= "/">
             <Login />
           </GuestRoute>
+          <PrivateRoute exact path="/api/properties/:id">
+            <Condo />
+          </PrivateRoute>
+          <PrivateRoute exact path="/properties">
+            <List />
+          </PrivateRoute>
         </Switch>
       </div>
     </Router>
