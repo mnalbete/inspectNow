@@ -1,6 +1,9 @@
 import './condo.css';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
+import { useHistory } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import api from '../utils/api';
 
 const printDocument = () => {
   const input = document.getElementById('divToPrint');
@@ -15,9 +18,41 @@ const printDocument = () => {
   ;
 }
 
-
-
 function Condo() {
+  const history = useHistory();
+const pathname = history.location.pathname;
+const pathnameArray = pathname.split("/");
+const propertyId = pathnameArray[3];
+const [form, setForm] = useState([]);
+
+useEffect(() => {
+  loadForm()
+}, [])
+
+function loadForm() {
+  api.getOneProperty(propertyId)
+    .then(
+      // res => console.log(res.data)
+      res => 
+      setForm(res.data)
+    )
+    .catch(err => console.log(err));
+};
+
+function saveForm(propertyId) {
+  console.log(propertyId + " " + form.address);
+  api.saveProperty(propertyId, {address: form.address})
+    .then(res => 
+      // console.log(res)
+      loadForm()
+      )
+    .catch(err => console.log(err));
+}
+
+function handleInputChange(event) {
+  const { name,value } = event.target;
+  setForm({...form, [name]: value})
+};
   return (
     
     <div>
@@ -44,6 +79,7 @@ function Condo() {
     <div>
       <header >
       <a href="#" class="btn btn-outline-success" onClick={printDocument}>Export to PDF</a>
+      <button className="btn btn-primary" onClick={saveForm(propertyId)}>Save </button>
       </header>
       
     </div>
@@ -54,7 +90,7 @@ function Condo() {
             <mainpic>
             <img src="/images/insertimage.png" alt="" />
           </mainpic>
-        <input type="email" class="form-control" id="info" aria-describedby="emailHelp" placeholder="Type Adress Here"></input>
+        <input onChange= {handleInputChange} name="address" type="email" class="form-control" id="info" aria-describedby="emailHelp" placeholder="Type Adress Here"></input>
         <br/>
         <br/>
         <div htmlFor="info" id="info">
