@@ -5,7 +5,10 @@ import React, { useState } from "react"
 import { NavLink } from 'react-router-dom'
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
-function Condo() {
+
+import { useHistory } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import api from '../utils/api';
 
   const history = useHistory();
   console.log(history.location.pathname);
@@ -14,7 +17,16 @@ function Condo() {
   const propertyId = pathnameArray[3];
   console.log(propertyId);
 
+function Condo() {
+  const history = useHistory();
+const pathname = history.location.pathname;
+const pathnameArray = pathname.split("/");
+const propertyId = pathnameArray[3];
+const [form, setForm] = useState([]);
 
+useEffect(() => {
+  loadForm()
+}, [])
 
   const printDocument = () => {
     const input = document.getElementById('divToPrint');
@@ -135,77 +147,92 @@ function Condo() {
 
   };
 
+function loadForm() {
+  api.getOneProperty(propertyId)
+    .then(
+      // res => console.log(res.data)
+      res => 
+      setForm(res.data)
+    )
+    .catch(err => console.log(err));
+};
+
+function saveForm(propertyId) {
+  console.log(propertyId + " " + form.address);
+  api.saveProperty(propertyId, {address: form.address})
+    .then(res => 
+      // console.log(res)
+      loadForm()
+      )
+    .catch(err => console.log(err));
+}
+
+function handleInputChange(event) {
+  const { name,value } = event.target;
+  setForm({...form, [name]: value})
+};
   return (
     <div>
-      <main>
-        <nav>
-          <div className="nav-header">
-            <figure id="logo">
-              <img src="/images/logo.png" alt="" />
-            </figure>
-          </div>
-          <ul>
-            <li>
-              <a href="#section-1">Property INFO</a>
-            </li>
-            <li>
-              <a href="#section-2">Overview</a>
-            </li>
-            <li>
-              <a href="#section-3">Frontdoor</a>
-            </li>
-            <li>
-              <a href="#section-4">HVAC</a>
-            </li>
-            <li>
-              <a href="#section-5">Ceiling</a>
-            </li>
-            <li>
-              <a href="#section-6">Kitchen</a>
-            </li>
-            <li>
-              <a href="#section-7">Bathroom</a>
-            </li>
-            <li>
-              <a href="#section-8">Bedroom</a>
-            </li>
-            <li>
-              <a href="#section-9">Living Dining</a>
-            </li>
-          </ul>
-        </nav>
-      </main>
-      <div>
-        <header>Export to PDF</header>
-        <header >
-          <a href="#" class="btn btn-outline-success" onClick={printDocument}>Export to PDF</a>
-        </header>
-        <main>
-          <nav>
-            <div className="nav-header">
-              <figure id="logo">
-                <img src="/images/logo.png" alt="" />
-              </figure>
-            </div>
-            <ul>
-              <li><a href="#section-1">Property INFO</a></li>
-              <li><a href="#section-2">Overview</a></li>
-              <li><a href="#section-3">Frontdoor</a></li>
-              <li><a href="#section-4">HVAC</a></li>
-              <li><a href="#section-5">Ceiling</a></li>
-              <li><a href="#section-6">Kitchen</a></li>
-              <li><a href="#section-7">Bathroom</a></li>
-              <li><a href="#section-8">Bedroom</a></li>
-              <li><a href="#section-9">Living Dining</a></li>
-            </ul>
-          </nav>
-        </main>
-        <div>
-          <header>
-            <NavLink style={{ color: "rgb(0, 212, 0)" }} to="/"> Home </NavLink>
-            <a href="#" class="btn btn-outline-success" onClick={printDocument}>Export to PDF</a>
-          </header>
-
+    <main>
+      <nav>
+        <div className="nav-header">
+          <figure id="logo">
+            <img src="/images/logo.png" alt="" />
+          </figure>
+        </div>
+        <ul>
+        <li><a href="#section-1">Property INFO</a></li>
+        <li><a href="#section-2">Overview</a></li>
+        <li><a href="#section-3">Frontdoor</a></li>
+        <li><a href="#section-4">HVAC</a></li>
+        <li><a href="#section-5">Ceiling</a></li>
+        <li><a href="#section-6">Kitchen</a></li>
+        <li><a href="#section-7">Bathroom</a></li>
+        <li><a href="#section-8">Bedroom</a></li>
+        <li><a href="#section-9">Living Dining</a></li>
+        </ul>
+      </nav>
+    </main>
+    <div>
+      <header>
+     <NavLink style={{color: "rgb(0, 212, 0)"}} to="/"> Home </NavLink>
+      <a href="#" class="btn btn-outline-success" onClick={printDocument}>Export to PDF</a>
+      <button className="btn btn-primary" onClick={saveForm(propertyId)}>Save </button>
+      </header>
+      
+    </div>
+    
+    <div className="container" id="divToPrint">
+          <section id="section-1">
+            <h1>Property INFO&nbsp;&nbsp;</h1>
+            <mainpic>
+            <img src="/images/insertimage.png" alt="" />
+          </mainpic>
+        <input onChange= {handleInputChange} name="address" type="email" class="form-control" id="info" aria-describedby="emailHelp" placeholder="Type Adress Here"></input>
+        <br/>
+        <br/>
+        <div htmlFor="info" id="info">
+        This confidential report is prepared exclusively for:
+        </div>
+        <input type="text" id="info" className="form-control" />
+        <br />
+        <br />
+        <div htmlFor="info" id="info">
+        Prepared By:
+        </div>
+        <input type="text" id="info" className="form-control" />
+        <br />
+        <br />
+        <div htmlFor="info" id="info">
+        Report Number:
+        </div>
+        <input type="text" id="info" className="form-control" />
+        <br />
+        <br />
+        <div htmlFor="info" id="info">
+      <button onclick="{this.save}">
+        Save Property INFO
+      </button>
         </div>
       </div>
 
