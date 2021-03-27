@@ -11,7 +11,6 @@ function List() {
   const user = useAuthenticatedUser();
   const history = useHistory();
   const [properties, setProperties] = useState([]);
-  console.log(user);
 
   useEffect(() => {
     loadProperties()

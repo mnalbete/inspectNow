@@ -25,27 +25,28 @@ const pathname = history.location.pathname;
 const pathnameArray = pathname.split("/");
 const propertyId = pathnameArray[3];
 const [form, setForm] = useState([]);
+const prevFrom = null;
 
-useEffect(() => {
-  loadForm()
-}, [])
+// useEffect(() => {
+//   loadForm()
+// }, [])
 
 function loadForm() {
+
   api.getOneProperty(propertyId)
     .then(
-      // res => console.log(res.data)
-      res => 
-      setForm(res.data)
-    )
+      res => console.log(res.data)
+      // res => prevFrom= res.data
+      )
     .catch(err => console.log(err));
 };
-
+console.log(form);
 function saveForm(propertyId) {
   console.log(propertyId + " " + form.address);
   api.saveProperty(propertyId, {address: form.address})
-    .then(res => 
+    .then(
       // console.log(res)
-      loadForm()
+      // loadForm()
       )
     .catch(err => console.log(err));
 }
@@ -92,7 +93,7 @@ function handleInputChange(event) {
             <mainpic>
             <img src="/images/insertimage.png" alt="" />
           </mainpic>
-        <input onChange= {handleInputChange} name="address" type="email" class="form-control" id="info" aria-describedby="emailHelp" placeholder="Type Adress Here"></input>
+        <input onClick= {handleInputChange} name="address" type="email" class="form-control" id="info" aria-describedby="emailHelp" placeholder="Type address here"></input>
         <br/>
         <br/>
         <div htmlFor="info" id="info">
