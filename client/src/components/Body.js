@@ -47,25 +47,6 @@ function Body() {
     }
   }
 
-<<<<<<< HEAD
-    return (
-      <div id = "back"  class = "vh-100"
-      style={{ backgroundImage: "url(/images/background.png)", backgroundSize: 'auto', backgroundRepeat: 'no-repeat'}}> 
-<div class="row">
-  <div class="col-sm-2">
-    <div class="card text-center">
-    <img src="/images/logo.png" class="card-img-top" alt="..."></img>
-      <div class="card-body">
-        <a href="#" class="btn btn-outline-success" onClick={handleSubmitList}>View Reports</a>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-2">
-    <div class="card text-center">
-    <img src="/images/logo.png" class="card-img-top" alt="..."></img>
-      <div class="card-body">
-        <a href="#" class="btn btn-outline-success" onClick={handleSubmit}>Inspect Property</a>
-=======
 //     return (
 //       <div id = "back" styles={{ backgroundImage: "./images/background.png" }}> 
 // <div class="row">
@@ -113,7 +94,6 @@ return (
   {/* <div class="card-body"> */}
     <a href="#" class="btn btn-success btn-block mt-3" 
    onClick={handleSubmit}>Inspect Property</a>
->>>>>>> main
 
 
   </div>
