@@ -1,14 +1,15 @@
 import "./condo.css";
 import api from "../utils/api";
 import { useHistory } from 'react-router-dom';
-import React, { useState } from "react"
 import { NavLink } from 'react-router-dom'
+
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 
 import { useHistory } from 'react-router-dom';
 import React, { useEffect, useState } from "react";
 import api from '../utils/api';
+
 
   const history = useHistory();
   console.log(history.location.pathname);
