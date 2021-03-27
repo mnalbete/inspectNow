@@ -3,7 +3,7 @@ const db = require("../models");
 module.exports = {
     findAll: function(req, res) {
       db.Property
-      .find({userId: req.user._id})
+      .findById({ _id: req.params.id })
       .then(dbProp => { res.json(dbProp);})
       .catch(err => { res.json(err);})
     },
