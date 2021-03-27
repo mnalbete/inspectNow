@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import api from '../utils/api';
 import {useAuthenticatedUser} from '../utils/auth';
 import { useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
 
 function List() {
@@ -45,6 +46,12 @@ function List() {
   }
   return (
  
+    <div>
+      <div>
+     <Link style={{color: "rgb(0, 212, 0)"}} to="/"> Home </Link>
+      </div>
+      
+    
        
     <div className="list-group">
 
@@ -64,6 +71,7 @@ function List() {
         <h3>No Results to Display</h3>
       )}
     </div>
+  </div>
   )
 };
 

@@ -1,4 +1,5 @@
 import './condo.css';
+import { NavLink } from 'react-router-dom'
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import { useHistory } from 'react-router-dom';
@@ -77,7 +78,8 @@ function handleInputChange(event) {
       </nav>
     </main>
     <div>
-      <header >
+      <header>
+     <NavLink style={{color: "rgb(0, 212, 0)"}} to="/"> Home </NavLink>
       <a href="#" class="btn btn-outline-success" onClick={printDocument}>Export to PDF</a>
       <button className="btn btn-primary" onClick={saveForm(propertyId)}>Save </button>
       </header>
