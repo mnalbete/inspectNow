@@ -2,6 +2,8 @@ import "./condo.css";
 import api from "../utils/api";
 import { useHistory } from 'react-router-dom';
 import React, { useState } from "react"
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 function Condo() {
 
   // const history = useHistory();
@@ -10,6 +12,21 @@ function Condo() {
   // const pathnameArray = pathname.split("/");
   // const propertyId = pathnameArray[3];
   // console.log(propertyId);
+
+
+
+  const printDocument = () => {
+    const input = document.getElementById('divToPrint');
+    html2canvas(input)
+      .then((canvas) => {
+        const imgData = canvas.toDataURL('image/png');
+        const pdf = new jsPDF();
+        pdf.addImage(imgData, 'JPEG', 0, 0);
+        // pdf.output('dataurlnewwindow');
+        pdf.save("download.pdf");
+      })
+      ;
+  }
 
   const [addressName, setAddress] = useState();
   const [ownerName, setOwnerName] = useState();
@@ -159,6 +176,10 @@ function Condo() {
       </main>
       <div>
         <header>Export to PDF</header>
+        <header >
+          <a href="#" class="btn btn-outline-success" onClick={printDocument}>Export to PDF</a>
+        </header>
+
       </div>
 
       <div className="container">

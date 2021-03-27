@@ -47,31 +47,60 @@ function Body() {
     }
   }
 
-    return (
-      <div id = "back" styles={{ backgroundImage: "./images/background.png" }}> 
-<div class="row">
-  <div class="col-sm-2">
-    <div class="card text-center">
-    <img src="/images/logo.png" class="card-img-top" alt="..."></img>
-      <div class="card-body">
-        <a href="#" class="btn btn-outline-success" onClick={handleSubmitList}>View Reports</a>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-2">
-    <div class="card text-center">
-    <img src="/images/logo.png" class="card-img-top" alt="..."></img>
-      <div class="card-body">
-        <a href="#" class="btn btn-outline-success" onClick={handleSubmit}>Inspect Property</a>
+//     return (
+//       <div id = "back" styles={{ backgroundImage: "./images/background.png" }}> 
+// <div class="row">
+//   <div class="col-sm-2">
+//     <div class="card text-center">
+//     <img src="/images/logo.png" class="card-img-top" alt="..."></img>
+//       <div class="card-body">
+//         <a href="#" class="btn btn-outline-success" onClick={handleSubmitList}>View Reports</a>
+//       </div>
+//     </div>
+//   </div>
+//   <div class="col-sm-2">
+//     <div class="card text-center">
+//     <img src="/images/logo.png" class="card-img-top" alt="..."></img>
+//       <div class="card-body">
+//         <a href="#" class="btn btn-outline-success" onClick={handleSubmit}>Inspect Property</a>
 
 
-      </div>
-    </div>
-  </div>
+//       </div>
+//     </div>
+//   </div>
+// </div>
+
+// </div>
+
+return (
+  <div className = "backgroundHome"  style={{ 
+    backgroundImage: `url(/images/pexels-binyamin-mellish-106399.jpg)`,   backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat', height: `1960px`
+  }}>
+
+    <div class = "home" >
+<div >
+{/* <div class="col-sm-2"> */}
+{/* <div class="card text-center"> */}
+{/* <img src="/images/logo.png" class="card-img-top" alt="..."></img> */}
+  {/* <div class="card-body"> */}
+    <a href="#" class="btn btn-success btn-block mt-3" onClick={handleSubmitList}>View Reports</a>
+  {/* </div>
+</div> */}
 </div>
+{/* <div class="col-sm-2"> */}
+{/* <div class="card text-center"> */}
+{/* <img src="/images/logo.png" class="card-img-top" alt="..."></img> */}
+  {/* <div class="card-body"> */}
+    <a href="#" class="btn btn-success btn-block mt-3" 
+   onClick={handleSubmit}>Inspect Property</a>
 
-</div>
+
+  </div>
+
+  
+     </div>
+)}
       
-    );
-  }
+
   export default Body;
