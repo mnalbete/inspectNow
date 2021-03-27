@@ -1,5 +1,20 @@
 import './condo.css';
 import { NavLink } from 'react-router-dom'
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
+
+const printDocument = () => {
+  const input = document.getElementById('divToPrint');
+  html2canvas(input)
+    .then((canvas) => {
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF();
+      pdf.addImage(imgData, 'JPEG', 0, 0);
+      // pdf.output('dataurlnewwindow');
+      pdf.save("download.pdf");
+    })
+  ;
+}
 
 
 
@@ -30,12 +45,12 @@ function Condo() {
     <div>
       <header>
      <NavLink style={{color: "rgb(0, 212, 0)"}} to="/"> Home </NavLink>
-                Export to PDF
+      <a href="#" class="btn btn-outline-success" onClick={printDocument}>Export to PDF</a>
       </header>
       
     </div>
     
-    <div className="container">
+    <div className="container" id="divToPrint">
           <section id="section-1">
             <h1>Property INFO&nbsp;&nbsp;</h1>
             <mainpic>
