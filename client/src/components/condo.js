@@ -1,5 +1,5 @@
 import './condo.css';
-
+import { NavLink } from 'react-router-dom'
 
 
 
@@ -28,7 +28,10 @@ function Condo() {
       </nav>
     </main>
     <div>
-      <header>Export to PDF</header>
+      <header>
+     <NavLink style={{color: "rgb(0, 212, 0)"}} to="/"> Home </NavLink>
+                Export to PDF
+      </header>
       
     </div>
     
