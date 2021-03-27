@@ -70,12 +70,12 @@ class API {
 
     // Gets one property by ID
     getOneProperty( id ) {
-        return axios.get("/api/properties" + id);
+        return axios.get("/api/properties/" + id);
     }
 
     // Gets book with the given ID
-    saveProperty( id) {
-    return axios.put("/api/peroperties/" + id);
+    saveProperty( id, form) {
+    return axios.put("/api/properties/" + id, form);
     }
 
     // Deletes property from db and user

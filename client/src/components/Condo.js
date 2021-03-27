@@ -2,6 +2,7 @@ import "./condo.css";
 import api from "../utils/api";
 import { useHistory } from 'react-router-dom';
 import React, { useState } from "react"
+import { NavLink } from 'react-router-dom'
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 function Condo() {
@@ -179,219 +180,245 @@ function Condo() {
         <header >
           <a href="#" class="btn btn-outline-success" onClick={printDocument}>Export to PDF</a>
         </header>
+        <main>
+          <nav>
+            <div className="nav-header">
+              <figure id="logo">
+                <img src="/images/logo.png" alt="" />
+              </figure>
+            </div>
+            <ul>
+              <li><a href="#section-1">Property INFO</a></li>
+              <li><a href="#section-2">Overview</a></li>
+              <li><a href="#section-3">Frontdoor</a></li>
+              <li><a href="#section-4">HVAC</a></li>
+              <li><a href="#section-5">Ceiling</a></li>
+              <li><a href="#section-6">Kitchen</a></li>
+              <li><a href="#section-7">Bathroom</a></li>
+              <li><a href="#section-8">Bedroom</a></li>
+              <li><a href="#section-9">Living Dining</a></li>
+            </ul>
+          </nav>
+        </main>
+        <div>
+          <header>
+            <NavLink style={{ color: "rgb(0, 212, 0)" }} to="/"> Home </NavLink>
+            <a href="#" class="btn btn-outline-success" onClick={printDocument}>Export to PDF</a>
+          </header>
 
+        </div>
       </div>
 
-      <div className="container">
-        <section id="section-1">
-          <h1>Property INFO&nbsp;&nbsp;</h1>
-          <form onSubmit={handleFormSubmit}>
-            <mainpic>
-              <img src="/images/insertimage.png" alt="" />
-            </mainpic>
+          <div className="container">
+            <section id="section-1">
+              <h1>Property INFO&nbsp;&nbsp;</h1>
+              <form onSubmit={handleFormSubmit}>
+                <mainpic>
+                  <img src="/images/insertimage.png" alt="" />
+                </mainpic>
 
-            <input
-              type="address"
-              class="form-control"
-              id="info"
-              aria-describedby="emailHelp"
-              placeholder="Type Adress Here"
-              onChange={e => setAddress(e.target.value)}
-            ></input>
-            <br />
-            <br />
-            <div htmlFor="info" id="info">
-              This confidential report is prepared exclusively for:
+                <input
+                  type="address"
+                  class="form-control"
+                  id="info"
+                  aria-describedby="emailHelp"
+                  placeholder="Type Adress Here"
+                  onChange={e => setAddress(e.target.value)}
+                ></input>
+                <br />
+                <br />
+                <div htmlFor="info" id="info">
+                  This confidential report is prepared exclusively for:
             </div>
-            <input type="text" id="info" className="form-control"
-              onChange={e => setOwnerName(e.target.value)} />
-            <br />
-            <br />
-            <div htmlFor="info" id="info">
-              Prepared By:
+                <input type="text" id="info" className="form-control"
+                  onChange={e => setOwnerName(e.target.value)} />
+                <br />
+                <br />
+                <div htmlFor="info" id="info">
+                  Prepared By:
             </div>
-            <input type="text" id="info" className="form-control"
-              onChange={e => setPreparesName(e.target.value)} />
-            <br />
-            <br />
-            <div htmlFor="info" id="info">
-              Report Number:
+                <input type="text" id="info" className="form-control"
+                  onChange={e => setPreparesName(e.target.value)} />
+                <br />
+                <br />
+                <div htmlFor="info" id="info">
+                  Report Number:
             </div>
-            <input type="text" id="info" className="form-control"
-              onChange={e => setReportNumber(e.target.value)} />
-            <br />
-            <br />
-            <div htmlFor="info" id="info">
-              <button className="btn btn-success" type="submit">
-                Submit
+                <input type="text" id="info" className="form-control"
+                  onChange={e => setReportNumber(e.target.value)} />
+                <br />
+                <br />
+                <div htmlFor="info" id="info">
+                  <button className="btn btn-success" type="submit">
+                    Submit
           </button>
-            </div>
-          </form>
-        </section>
+                </div>
+              </form>
+            </section>
 
-        <section id="section-2">
-          <h1>Overview&nbsp;&nbsp;</h1>
-          <h3>THE SCOPE OF THE INSPECTION</h3>
-          <h5>
-            Please note that this is a visual inspection. All components
-            designated for inspection in the Standards of Practice are
-            inspected, except as may be noted in the “Limitations of Inspection”
-            sections within this report. It is the goal of the inspection to put
-            a home buyer in a better position to make a buying decision. Not all
-            improvements will be identified during this inspection. Unexpected
-            repairs should still be anticipated. The inspection should not be
-            considered a guarantee or warranty of any kind. Please refer to the
-            pre-inspection contract for a full explanation of the scope of the
-            inspection.
+            <section id="section-2">
+              <h1>Overview&nbsp;&nbsp;</h1>
+              <h3>THE SCOPE OF THE INSPECTION</h3>
+              <h5>
+                Please note that this is a visual inspection. All components
+                designated for inspection in the Standards of Practice are
+                inspected, except as may be noted in the “Limitations of Inspection”
+                sections within this report. It is the goal of the inspection to put
+                a home buyer in a better position to make a buying decision. Not all
+                improvements will be identified during this inspection. Unexpected
+                repairs should still be anticipated. The inspection should not be
+                considered a guarantee or warranty of any kind. Please refer to the
+                pre-inspection contract for a full explanation of the scope of the
+                inspection.
           </h5>
-        </section>
-        <section id="section-3">
-          <h1>Frontdoor&nbsp;&nbsp;</h1>
-          <div>
-            <form onSubmit={handleFormSubmit}>
-              <input type="checkbox" name="frontdr_peep" onChange={e => setFrontDr_peep(e.target.value)} />
+            </section>
+            <section id="section-3">
+              <h1>Frontdoor&nbsp;&nbsp;</h1>
+              <div>
+                <form onSubmit={handleFormSubmit}>
+                  <input type="checkbox" name="frontdr_peep" onChange={e => setFrontDr_peep(e.target.value)} />
             peephole with knocker&nbsp;&nbsp;
             <br></br>
-              <input type="checkbox" name="frontdr_swing" onChange={e => setFrontDr_swing(e.target.value)} />
+                  <input type="checkbox" name="frontdr_swing" onChange={e => setFrontDr_swing(e.target.value)} />
             Swing&nbsp;&nbsp;
             <br></br>
-              <input type="checkbox" name="frontdr_latching" onChange={e => setFrontDr_latch(e.target.value)} />
+                  <input type="checkbox" name="frontdr_latching" onChange={e => setFrontDr_latch(e.target.value)} />
             Latching&nbsp;&nbsp;
             <br></br>
-              <input type="checkbox" name="frontdr_handle" onChange={e => setFrontDr_handle(e.target.value)} />
+                  <input type="checkbox" name="frontdr_handle" onChange={e => setFrontDr_handle(e.target.value)} />
             handle&nbsp;&nbsp;
             <br></br>
-              <input type="checkbox" name="frontdr_scrathes" onChange={e => setFrontDr_scratches(e.target.value)} />
+                  <input type="checkbox" name="frontdr_scrathes" onChange={e => setFrontDr_scratches(e.target.value)} />
             Scratches&nbsp;&nbsp;
             <br></br>
-              <input type="checkbox" name="frontdr__stop" onChange={e => setFrontDr_stop(e.target.value)} />
+                  <input type="checkbox" name="frontdr__stop" onChange={e => setFrontDr_stop(e.target.value)} />
             Door stop&nbsp;&nbsp;
             <br></br>
-              <input type="checkbox" name="frontdr_self" onChange={e => setFrontDr_self(e.target.value)} />
+                  <input type="checkbox" name="frontdr_self" onChange={e => setFrontDr_self(e.target.value)} />
             Self-closing Hinges&nbsp;&nbsp;
             <br></br>
-              <input type="checkbox" name="frontdr_lights" onChange={e => setFrontDr_lights(e.target.value)} />
+                  <input type="checkbox" name="frontdr_lights" onChange={e => setFrontDr_lights(e.target.value)} />
             Lights above front door&nbsp;&nbsp;
             <br></br>
-              <input type="checkbox" name="frontdr_wall" onChange={e => setFrontDr_wall(e.target.value)} />
+                  <input type="checkbox" name="frontdr_wall" onChange={e => setFrontDr_wall(e.target.value)} />
             Wall around front door&nbsp;&nbsp;
             <br></br>
-              <br></br>Note
+                  <br></br>Note
 
             <textarea
-                style={{ width: "100%", maxWidth: "100%" }}
-                defaultValue={""}
-                name="frontdr_comments"
-                onChange={e => setFrontDr_comments(e.target.value)} />
+                    style={{ width: "100%", maxWidth: "100%" }}
+                    defaultValue={""}
+                    name="frontdr_comments"
+                    onChange={e => setFrontDr_comments(e.target.value)} />
 
-              <div>
-                <div className="side-by-side">
                   <div>
-                    <img src="/images/uploadimage.png" alt="" />
+                    <div className="side-by-side">
+                      <div>
+                        <img src="/images/uploadimage.png" alt="" />
+                      </div>
+                      <div>
+                        <img src="/images/uploadimage.png" alt="" />
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <img src="/images/uploadimage.png" alt="" />
-                  </div>
-                </div>
-              </div>
-              <div htmlFor="info" id="info">
-                <button className="btn btn-success" type="submit">
-                  Submit
+                  <div htmlFor="info" id="info">
+                    <button className="btn btn-success" type="submit">
+                      Submit
           </button>
+                  </div>
+
+                </form>
               </div>
+            </section>
 
-            </form>
-          </div>
-        </section>
-
-        {/* form one */}
-        <section id="section-4">
-          <h1>HVAC&nbsp;&nbsp;</h1>
-          <form onSubmit={handleFormSubmit} >
-            <input type="checkbox" name="hvac_filter" onChange={e => sethVac_filter(e.target.value)} />
+            {/* form one */}
+            <section id="section-4">
+              <h1>HVAC&nbsp;&nbsp;</h1>
+              <form onSubmit={handleFormSubmit} >
+                <input type="checkbox" name="hvac_filter" onChange={e => sethVac_filter(e.target.value)} />
           Replace Filter&nbsp;&nbsp;
           <br></br>
-            <input type="checkbox" name="hvac_setting" onChange={e => sethVac_setting(e.target.value)} />
+                <input type="checkbox" name="hvac_setting" onChange={e => sethVac_setting(e.target.value)} />
           Thermostat Setting&nbsp;&nbsp;
           <br></br>
-            <input type="checkbox" name="hvac_heating" onChange={e => sethVac_heating(e.target.value)} />
+                <input type="checkbox" name="hvac_heating" onChange={e => sethVac_heating(e.target.value)} />
           heating&nbsp;&nbsp;
           <br></br>
-            <input type="checkbox" name="hvac_cooling" onChange={e => sethVac_cooling(e.target.value)} />
+                <input type="checkbox" name="hvac_cooling" onChange={e => sethVac_cooling(e.target.value)} />
           cooling&nbsp;&nbsp;
           <br></br>
-            <input type="checkbox" name="hvac_align" onChange={e => sethVac_align(e.target.value)} />
+                <input type="checkbox" name="hvac_align" onChange={e => sethVac_align(e.target.value)} />
           register alignment&nbsp;&nbsp;
           <br></br>
-            <br></br>Note
+                <br></br>Note
           <textarea
-              style={{ width: "100%", maxWidth: "100%" }}
-              defaultValue={""}
-              name="hvac_comments"
-              onChange={e => sethVac_comments(e.target.value)}
-            />
-            <div>
-              <div className="side-by-side">
+                  style={{ width: "100%", maxWidth: "100%" }}
+                  defaultValue={""}
+                  name="hvac_comments"
+                  onChange={e => sethVac_comments(e.target.value)}
+                />
                 <div>
-                  <img src="/images/uploadimage.png" alt="" />
-                </div>
-                <div>
-                  <img src="/images/uploadimage.png" alt="" />
-                </div>
+                  <div className="side-by-side">
+                    <div>
+                      <img src="/images/uploadimage.png" alt="" />
+                    </div>
+                    <div>
+                      <img src="/images/uploadimage.png" alt="" />
+                    </div>
 
-              </div>
+                  </div>
 
-            </div>
-          </form>
-        </section>
-        <section id="section-5">
-          <h1>Ceiling&nbsp;&nbsp;</h1>
-          <form onSubmit={handleFormSubmit}>
-            <input type="checkbox" name="ceiling_paint" onChange={e => setceiling_Paint(e.target.value)} />
+                </div>
+              </form>
+            </section>
+            <section id="section-5">
+              <h1>Ceiling&nbsp;&nbsp;</h1>
+              <form onSubmit={handleFormSubmit}>
+                <input type="checkbox" name="ceiling_paint" onChange={e => setceiling_Paint(e.target.value)} />
           Paint&nbsp;&nbsp;
           <br></br>
-            <input type="checkbox" name="ceiling_mold" onChange={e => setceiling_Mold(e.target.value)} />
+                <input type="checkbox" name="ceiling_mold" onChange={e => setceiling_Mold(e.target.value)} />
           Molding&nbsp;&nbsp;
           <br></br>
-            <input type="checkbox" name="ceiling_align" onChange={e => setceiling_Align(e.target.value)} />
+                <input type="checkbox" name="ceiling_align" onChange={e => setceiling_Align(e.target.value)} />
           Diffuser alignment&nbsp;&nbsp;
           <br></br>
-            <input type="checkbox" name="ceiling_sprinklers" onChange={e => setceiling_Sprinklers(e.target.value)} />
+                <input type="checkbox" name="ceiling_sprinklers" onChange={e => setceiling_Sprinklers(e.target.value)} />
           Sprinklers&nbsp;&nbsp;
           <br></br>
-            <input type="checkbox" name="ceiling_smoke" onChange={e => setceiling_Smoke(e.target.value)} />
+                <input type="checkbox" name="ceiling_smoke" onChange={e => setceiling_Smoke(e.target.value)} />
           Smoke detectors&nbsp;&nbsp;
           <br></br>
-            <br></br>Note
+                <br></br>Note
           <textarea
-              style={{ width: "100%", maxWidth: "100%" }}
-              defaultValue={""}
-              name="ceiling_comments"
-              onChange={e => setceiling_Comments(e.target.value)}
-            />
-            <div>
-              <div className="side-by-side">
+                  style={{ width: "100%", maxWidth: "100%" }}
+                  defaultValue={""}
+                  name="ceiling_comments"
+                  onChange={e => setceiling_Comments(e.target.value)}
+                />
                 <div>
-                  <img src="/images/uploadimage.png" alt="" />
+                  <div className="side-by-side">
+                    <div>
+                      <img src="/images/uploadimage.png" alt="" />
+                    </div>
+                    <div>
+                      <img src="/images/uploadimage.png" alt="" />
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <img src="/images/uploadimage.png" alt="" />
-                </div>
-              </div>
-            </div>
-            <div htmlFor="info" id="info">
-              <button className="btn btn-success" type="submit">
-                Submit
+                <div htmlFor="info" id="info">
+                  <button className="btn btn-success" type="submit">
+                    Submit
           </button>
-            </div>
-          </form>
+                </div>
+              </form>
 
-        </section>
-        <section id="section-6">
-          <h1>Kitchen&nbsp;&nbsp;</h1>
-          <h3>Lights / Outlets&nbsp;&nbsp;</h3>
-          <form onSubmit={handleFormSubmit}>
-            <input type="checkbox" name="kitchen_light" onChange={e => setkitchen_Lights(e.target.value)} />
+            </section>
+            <section id="section-6">
+              <h1>Kitchen&nbsp;&nbsp;</h1>
+              <h3>Lights / Outlets&nbsp;&nbsp;</h3>
+              <form onSubmit={handleFormSubmit}>
+                <input type="checkbox" name="kitchen_light" onChange={e => setkitchen_Lights(e.target.value)} />
           Ceiling lights&nbsp;&nbsp;
           <input type="checkbox" name="kitchen_cabinet" onChange={e => setkitchen_Cabinet(e.target.value)} />
           Under Cabinet lights&nbsp;&nbsp;
@@ -399,7 +426,7 @@ function Condo() {
           GFCI&nbsp;&nbsp;
 
           <h3>Dishwasher&nbsp;&nbsp;</h3>
-            <input type="checkbox" name="dish_air" onChange={e => setdish_Air(e.target.value)} />
+                <input type="checkbox" name="dish_air" onChange={e => setdish_Air(e.target.value)} />
           Air Gap&nbsp;&nbsp;
           <input type="checkbox" name="dish_operational" onChange={e => setdish_Operational(e.target.value)} />
           operational&nbsp;&nbsp;
@@ -407,7 +434,7 @@ function Condo() {
           DHigh loop&nbsp;&nbsp;
 
           <h3>Microwave&nbsp;&nbsp;</h3>
-            <input type="checkbox" name="micro_clean " onChange={e => setmicro_Clean(e.target.value)} />
+                <input type="checkbox" name="micro_clean " onChange={e => setmicro_Clean(e.target.value)} />
           clean&nbsp;&nbsp;
           <input type="checkbox" name="micro_heating" onChange={e => setmicro_Heating(e.target.value)} />
           Heating&nbsp;&nbsp;
@@ -419,7 +446,7 @@ function Condo() {
           lighting&nbsp;&nbsp;
 
           <h3>Fridge&nbsp;&nbsp;</h3>
-            <input type="checkbox" name="fridge_ice" onChange={e => setfridge_Ice(e.target.value)} />
+                <input type="checkbox" name="fridge_ice" onChange={e => setfridge_Ice(e.target.value)} />
           Ice Maker&nbsp;&nbsp;
           <input type="checkbox" name="fridge_water" onChange={e => setfridge_Water(e.target.value)} />
           water&nbsp;&nbsp;
@@ -427,7 +454,7 @@ function Condo() {
           Dents&nbsp;&nbsp;
 
           <h3>Ranges&nbsp;&nbsp;</h3>
-            <input type="checkbox" name="range_tip" onChange={e => setrange_Tip(e.target.value)} />
+                <input type="checkbox" name="range_tip" onChange={e => setrange_Tip(e.target.value)} />
           Anti-Tip&nbsp;&nbsp;
           <input type="checkbox" name="range_operational" onChange={e => setrange_Operational(e.target.value)} />
           operational&nbsp;&nbsp;
@@ -439,7 +466,7 @@ function Condo() {
           time set&nbsp;&nbsp;
 
           <h3>Sink&nbsp;&nbsp;</h3>
-            <input type="checkbox" name="sink_faucet" onChange={e => setsink_Faucet(e.target.value)} />
+                <input type="checkbox" name="sink_faucet" onChange={e => setsink_Faucet(e.target.value)} />
           Faucet&nbsp;&nbsp;
           <input type="checkbox" name="sinK_sprayer" onChange={e => setsink_Sprayer(e.target.value)} />
           Sprayer&nbsp;&nbsp;
@@ -451,7 +478,7 @@ function Condo() {
           Garbage Disposal&nbsp;&nbsp;
 
           <h3>Counter&nbsp;&nbsp;</h3>
-            <input type="checkbox" name="counter_secured" onChange={e => setcounter_Secured(e.target.value)} />
+                <input type="checkbox" name="counter_secured" onChange={e => setcounter_Secured(e.target.value)} />
           secured&nbsp;&nbsp;
           <input type="checkbox" name="counter_edge" onChange={e => setcounter_Edge(e.target.value)} />
           Check Edges&nbsp;&nbsp;
@@ -459,42 +486,42 @@ function Condo() {
           damages&nbsp;&nbsp;
 
           <h3>Cabinet&nbsp;&nbsp;</h3>
-            <input type="checkbox" name="cab_door" onChange={e => setcab_Door(e.target.value)} />
+                <input type="checkbox" name="cab_door" onChange={e => setcab_Door(e.target.value)} />
           Doors loose aligned damages&nbsp;&nbsp;
           <br></br>
-            <input type="checkbox" name="cab_shelf" onChange={e => setcab_Shelf(e.target.value)} />
+                <input type="checkbox" name="cab_shelf" onChange={e => setcab_Shelf(e.target.value)} />
           shelves loose hardware&nbsp;&nbsp;
           <br></br>
-            <input type="checkbox" name="cab_paint" onChange={e => setcab_Paint(e.target.value)} />
+                <input type="checkbox" name="cab_paint" onChange={e => setcab_Paint(e.target.value)} />
           Paint Touch up&nbsp;&nbsp;
           <br></br>
-            <input type="checkbox" name="cab_lazy" onChange={e => setcab_Lazy(e.target.value)} />
+                <input type="checkbox" name="cab_lazy" onChange={e => setcab_Lazy(e.target.value)} />
           Lazy Susan - Stable on Tracks&nbsp;&nbsp;
           <br></br>
-            <div>
-              <div className="side-by-side">
                 <div>
-                  <img src="/images/uploadimage.png" alt="" />
+                  <div className="side-by-side">
+                    <div>
+                      <img src="/images/uploadimage.png" alt="" />
+                    </div>
+                    <div>
+                      <img src="/images/uploadimage.png" alt="" />
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <img src="/images/uploadimage.png" alt="" />
-                </div>
-              </div>
-            </div>
-            <div htmlFor="info" id="info">
-              <button className="btn btn-success" type="submit">
-                Submit
+                <div htmlFor="info" id="info">
+                  <button className="btn btn-success" type="submit">
+                    Submit
           </button>
-            </div>
-          </form>
+                </div>
+              </form>
 
-        </section>
+            </section>
 
-        <section id="section-7">
-          <h1>Bathroom&nbsp;&nbsp;</h1>
-          <h3>Bathroom Door&nbsp;&nbsp;</h3>
-          <form onSubmit={handleFormSubmit}>
-            <input type="checkbox" name="bathdr_stop" onChange={e => setbathroomDr_stop(e.target.value)} />
+            <section id="section-7">
+              <h1>Bathroom&nbsp;&nbsp;</h1>
+              <h3>Bathroom Door&nbsp;&nbsp;</h3>
+              <form onSubmit={handleFormSubmit}>
+                <input type="checkbox" name="bathdr_stop" onChange={e => setbathroomDr_stop(e.target.value)} />
           door stop&nbsp;&nbsp;
           <input type="checkbox" name="bathdr_handle" onChange={e => setbathroomDr_handle(e.target.value)} />
           handle&nbsp;&nbsp;
@@ -507,94 +534,94 @@ function Condo() {
           <input type="checkbox" name="br_light" onChange={e => setbathroomDr_light(e.target.value)} />
           lights&nbsp;&nbsp;
           <div htmlFor="info" id="info">
-              <button className="btn btn-success" type="submit">
-                Submit
+                  <button className="btn btn-success" type="submit">
+                    Submit
           </button>
-            </div>
-          </form>
+                </div>
+              </form>
 
-        </section>
-        <section id="section-8">
-          <h1>Bedroom&nbsp;&nbsp;</h1>
-          <form onSubmit={handleFormSubmit}>
-            <input type="checkbox" name="bedroom_dr" onChange={e => setbedRoom_dr(e.target.value)} />
+            </section>
+            <section id="section-8">
+              <h1>Bedroom&nbsp;&nbsp;</h1>
+              <form onSubmit={handleFormSubmit}>
+                <input type="checkbox" name="bedroom_dr" onChange={e => setbedRoom_dr(e.target.value)} />
           door: handle, Latching, Scratches, Door stop, Strike plate&nbsp;&nbsp;
           <br></br>
-            <input type="checkbox" name="bedroom_win" onChange={e => setbedRoom_wind(e.target.value)} />
+                <input type="checkbox" name="bedroom_win" onChange={e => setbedRoom_wind(e.target.value)} />
           Windows: Screen, sill, Blinds&nbsp;&nbsp;
           <br></br>
-            <input type="checkbox" name="bedroom_light" onChange={e => setbedRoom_lights(e.target.value)} />
+                <input type="checkbox" name="bedroom_light" onChange={e => setbedRoom_lights(e.target.value)} />
           lights&nbsp;&nbsp;
           <br></br>
-            <input type="checkbox" name="bedroom_wall" onChange={e => setbedRoom_wall(e.target.value)} />
+                <input type="checkbox" name="bedroom_wall" onChange={e => setbedRoom_wall(e.target.value)} />
           Wall and ceiling&nbsp;&nbsp;
           <br></br>Note
           <textarea
-              style={{ width: "100%", maxWidth: "100%" }}
-              defaultValue={""}
-              name="bedroom_comments"
-              onChange={e => setbedRoom_comment(e.target.value)}
-            />
-            <div>
-              <div className="side-by-side">
+                  style={{ width: "100%", maxWidth: "100%" }}
+                  defaultValue={""}
+                  name="bedroom_comments"
+                  onChange={e => setbedRoom_comment(e.target.value)}
+                />
                 <div>
-                  <img src="/images/uploadimage.png" alt="" />
+                  <div className="side-by-side">
+                    <div>
+                      <img src="/images/uploadimage.png" alt="" />
+                    </div>
+                    <div>
+                      <img src="/images/uploadimage.png" alt="" />
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <img src="/images/uploadimage.png" alt="" />
-                </div>
-              </div>
-            </div>
-            <div htmlFor="info" id="info">
-              <button className="btn btn-success" type="submit">
-                Submit
+                <div htmlFor="info" id="info">
+                  <button className="btn btn-success" type="submit">
+                    Submit
           </button>
-            </div>
-          </form>
+                </div>
+              </form>
 
-        </section>
-        <section id="section-9">
-          <h1>Living Dining&nbsp;&nbsp;</h1>
-          <form onSubmit={handleFormSubmit}>
-            <input type="checkbox" name="dining_switch" onChange={e => setlivingRoom_switch(e.target.value)} />
+            </section>
+            <section id="section-9">
+              <h1>Living Dining&nbsp;&nbsp;</h1>
+              <form onSubmit={handleFormSubmit}>
+                <input type="checkbox" name="dining_switch" onChange={e => setlivingRoom_switch(e.target.value)} />
           Switches&nbsp;&nbsp;
           <br></br>
-            <input type="checkbox" name="dining_light" onChange={e => setlivingRoom_lights(e.target.value)} />
+                <input type="checkbox" name="dining_light" onChange={e => setlivingRoom_lights(e.target.value)} />
           lights&nbsp;&nbsp;
           <br></br>
-            <input type="checkbox" name="dining_outlet" onChange={e => setlivingRoom_outlet(e.target.value)} />
+                <input type="checkbox" name="dining_outlet" onChange={e => setlivingRoom_outlet(e.target.value)} />
           Outlet&nbsp;&nbsp;
           <br></br>
 
-            <input type="checkbox" name="dining_wall" onChange={e => setlivingRoom_wall(e.target.value)} />
+                <input type="checkbox" name="dining_wall" onChange={e => setlivingRoom_wall(e.target.value)} />
           Wall and ceiling&nbsp;&nbsp;
           <input type="checkbox" name="dining_floor" />
           flooring&nbsp;&nbsp;
           <br></br>Note
           <textarea
-              style={{ width: "100%", maxWidth: "100%" }}
-              defaultValue={""}
-              name="dinning_comments"
-              onChange={e => setlivingRoom_comment(e.target.value)}
-            />
-            <div>
-              <div className="side-by-side">
+                  style={{ width: "100%", maxWidth: "100%" }}
+                  defaultValue={""}
+                  name="dinning_comments"
+                  onChange={e => setlivingRoom_comment(e.target.value)}
+                />
                 <div>
-                  <img src="/images/uploadimage.png" alt="" />
+                  <div className="side-by-side">
+                    <div>
+                      <img src="/images/uploadimage.png" alt="" />
+                    </div>
+                    <div>
+                      <img src="/images/uploadimage.png" alt="" />
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <img src="/images/uploadimage.png" alt="" />
+                <div htmlFor="info" id="info">
+                  <button className="btn btn-success" type="submit">Submit</button>
                 </div>
-              </div>
-            </div>
-            <div htmlFor="info" id="info">
-              <button className="btn btn-success" type="submit">Submit</button>
-            </div>
-          </form>
+              </form>
 
-        </section>
-      </div>
-    </div>
+            </section>
+          </div>
+        </div>
   );
 }
 

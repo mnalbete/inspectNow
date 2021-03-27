@@ -1,4 +1,4 @@
-// function Login() {
+ // function Login() {
 //       return (
 //         <body styles={{ backgroundImage: "../../images/pexels-binyamin-mellish-106399.jpg" }}>
 //         <form >
@@ -79,7 +79,7 @@ import { Link } from 'react-router-dom'
          
     <body style={{ backgroundImage: `url(/images/frontdoor.jpg)`, backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat', height: `1960px`, width: `100%` }}>
-    <form id = "myForm">
+    <form onSubmit={handleSubmit}>
       <div className="form-group" style={{ marginRight:`10%`,marginLeft:`10%` }}>
         <label htmlFor="exampleInputEmail1" style={{ color:`white` }}>Email address</label>
         <input type="text" className="form-control" id="exampleInputEmail1" ref={emailRef} placeholder="Enter email"  />
