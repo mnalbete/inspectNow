@@ -58,20 +58,43 @@ import { Link } from 'react-router-dom'
           }
       }
   
-      return (
-        <body style={{ backgroundImage: "url(/images/background.png)", backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}>
-            <div class="row justify-content-md-center vh-100">
-                <form onSubmit={handleSubmit}>
-                    <h2>Login</h2>
-                    <input type="text" ref={emailRef} placeholder="Your email" /><br />
-                    <input type="password" ref={passwordRef} placeholder="Your password" /><br />
-                    <button className="btn btn-success" >Login </button>
-                </form>
-                <Link class= "text-success" to="/register"> Not a member? Register here. </Link>
-            </div>
-        </body>
-      )
+  //     return (
+  //       <body style={{ backgroundImage: "url(/images/background.png)", backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}>
+  //           <div class="row justify-content-md-center vh-100">
+  //               <form onSubmit={handleSubmit}>
+  //                   <h2>Login</h2>
+  //                   <input type="text" ref={emailRef} placeholder="Your email" /><br />
+  //                   <input type="password" ref={passwordRef} placeholder="Your password" /><br />
+  //                   <button className="btn btn-success" >Login </button>
+  //               </form>
+  //               <Link class= "text-success" to="/register"> Not a member? Register here. </Link>
+  //           </div>
+  //       </body>
+  //     )
   
-  }
+  // }
+
+
+  return (
+         
+    <body style={{ backgroundImage: `url(/images/frontdoor.jpg)`, backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat', height: `1960px`, width: `100%` }}>
+    <form id = "myForm">
+      <div className="form-group" style={{ marginRight:`10%`,marginLeft:`10%` }}>
+        <label htmlFor="exampleInputEmail1" style={{ color:`white` }}>Email address</label>
+        <input type="text" className="form-control" id="exampleInputEmail1" ref={emailRef} placeholder="Enter email"  />
+        {/* /* <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small> */}
+      </div> 
+      <div className="form-group" style={{ marginRight:`10%`,marginLeft:`10%` }}>
+        <label htmlFor="exampleInputPassword1" style={{ color:`white` }}>Password</label>
+        <input type="password" className="form-control" id="exampleInputPassword1" ref={passwordRef} placeholder="Password"  />
+      </div>
+      <button type="submit" className="btn btn-success btn-lg mt-4" style={{width: `80%`,marginRight:`10%`,marginLeft:`10%`}}>Submit</button>
+    </form>
+    <Link className= "text-success " to="/register" style={{ color:`white` }}> Not a member? Register here. </Link>
+    </body>
+  );
+}
+
 
   export default Login;
