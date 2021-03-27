@@ -101,6 +101,17 @@ img {
   width:0px 
   
 }
+
+
+.backgroundHome{
+  
+  
+  padding: 40px; 
+  width:100%,
+ 
+ 
+  
+ }
 /* #back{
 background-image: url("client/public/images/background.png");
 background-position: center;
