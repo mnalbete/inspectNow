@@ -6,12 +6,12 @@ import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 function Condo() {
 
-  // const history = useHistory();
-  // console.log(history.location.pathname);
-  // const pathname = history.location.pathname;
-  // const pathnameArray = pathname.split("/");
-  // const propertyId = pathnameArray[3];
-  // console.log(propertyId);
+  const history = useHistory();
+  console.log(history.location.pathname);
+  const pathname = history.location.pathname;
+  const pathnameArray = pathname.split("/");
+  const propertyId = pathnameArray[3];
+  console.log(propertyId);
 
 
 
