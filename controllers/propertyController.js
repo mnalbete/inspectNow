@@ -9,7 +9,7 @@ module.exports = {
     },
     findOne: function(req, res) {
       db.Property
-        .findOne({_id: req.params.id})
+        .find({_id: req.params.id})
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },
