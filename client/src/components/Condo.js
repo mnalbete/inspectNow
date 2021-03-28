@@ -107,8 +107,7 @@ function handleInputChange(event) {
             <img src="/images/insertimage.png" alt="" />
           </mainpic>
           <h5>Note: only this Address field is funtioning</h5>
-          <h5>Address: {prevForm} </h5>
-        <input onChange= {handleInputChange} name="address" type="email" class="form-control" id="info" aria-describedby="emailHelp" placeholder="Type address here"></input>
+        <input onChange= {handleInputChange} name="address" type="email" class="form-control" id="info" aria-describedby="emailHelp" placeholder={prevForm? prevForm:"Type address here"}></input>
         <br/>
         <br/>
         <div htmlFor="info" id="info">
