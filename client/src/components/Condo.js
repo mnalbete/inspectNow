@@ -30,7 +30,7 @@ const [prevForm, setPrevForm] = useState([]);
 //   loadForm(propertyId)
 // }, [])
 
- const loadForm = () => {
+ const loadForm = (propertyId) => {
 
   let p = api.getOneProperty(propertyId).then(res => {return res.data[0]});
   // console.log(p);
@@ -40,11 +40,11 @@ const [prevForm, setPrevForm] = useState([]);
     setPrevForm(result.address)
   })
   
-  console.log(prevForm);
+  // console.log(prevForm);
 
   };
 
-
+  loadForm(propertyId)
 
 
 
@@ -59,7 +59,7 @@ function saveForm(event) {
   api.saveProperty(propertyId, {address: form.address})
     .then(
       // console.log(res)
-      loadForm()
+      loadForm(propertyId)
       )
     .catch(err => console.log(err));
 }
