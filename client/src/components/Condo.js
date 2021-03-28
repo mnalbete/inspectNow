@@ -25,28 +25,41 @@ const pathname = history.location.pathname;
 const pathnameArray = pathname.split("/");
 const propertyId = pathnameArray[3];
 const [form, setForm] = useState([]);
-const prevFrom = null;
-
+const [prevForm, setPrevForm] = useState([]);
 // useEffect(() => {
-//   loadForm()
+//   loadForm(propertyId)
 // }, [])
 
-function loadForm() {
+ const loadForm = () => {
 
-  api.getOneProperty(propertyId)
-    .then(
-      res => console.log(res.data)
-      // res => prevFrom= res.data
-      )
-    .catch(err => console.log(err));
-};
-console.log(form);
-function saveForm(propertyId) {
-  console.log(propertyId + " " + form.address);
+  let p = api.getOneProperty(propertyId).then(res => {return res.data[0]});
+  // console.log(p);
+  
+  p.then(function(result) {
+    // console.log(result.address) // "Some User token"
+    setPrevForm(result.address)
+  })
+  
+  console.log(prevForm);
+
+  };
+
+
+
+
+
+
+
+    // User has been successfully logged in and added to state. Perform any additional actions you need here such as redirecting to a new page.
+
+
+function saveForm(event) {
+  event.preventDefault();
+  // console.log(propertyId + " " + form.address);
   api.saveProperty(propertyId, {address: form.address})
     .then(
       // console.log(res)
-      // loadForm()
+      loadForm()
       )
     .catch(err => console.log(err));
 }
@@ -82,7 +95,7 @@ function handleInputChange(event) {
       <header>
      <NavLink style={{color: "rgb(0, 212, 0)"}} to="/"> Home </NavLink>
       <a href="#" class="btn btn-outline-success" onClick={printDocument}>Export to PDF</a>
-      <button className="btn btn-primary" onClick={saveForm(propertyId)}>Save </button>
+      <button className="btn btn-primary" onClick={saveForm}>Save </button>
       </header>
       
     </div>
@@ -93,7 +106,9 @@ function handleInputChange(event) {
             <mainpic>
             <img src="/images/insertimage.png" alt="" />
           </mainpic>
-        <input onClick= {handleInputChange} name="address" type="email" class="form-control" id="info" aria-describedby="emailHelp" placeholder="Type address here"></input>
+          <h5>Note: only this Address field is funtioning</h5>
+          <h5>Address: {prevForm} </h5>
+        <input onChange= {handleInputChange} name="address" type="email" class="form-control" id="info" aria-describedby="emailHelp" placeholder="Type address here"></input>
         <br/>
         <br/>
         <div htmlFor="info" id="info">
