@@ -2,6 +2,9 @@ import './condo.css';
 import { NavLink } from 'react-router-dom'
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
+import { useHistory } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import api from '../utils/api';
 
 const printDocument = () => {
   const input = document.getElementById('divToPrint');
@@ -16,9 +19,55 @@ const printDocument = () => {
   ;
 }
 
-
-
 function Condo() {
+  const history = useHistory();
+const pathname = history.location.pathname;
+const pathnameArray = pathname.split("/");
+const propertyId = pathnameArray[3];
+const [form, setForm] = useState([]);
+const [prevForm, setPrevForm] = useState([]);
+// useEffect(() => {
+//   loadForm(propertyId)
+// }, [])
+
+ const loadForm = (propertyId) => {
+
+  let p = api.getOneProperty(propertyId).then(res => {return res.data[0]});
+  // console.log(p);
+  
+  p.then(function(result) {
+    // console.log(result.address) // "Some User token"
+    setPrevForm(result.address)
+  })
+  
+  // console.log(prevForm);
+
+  };
+
+  loadForm(propertyId)
+
+
+
+
+
+    // User has been successfully logged in and added to state. Perform any additional actions you need here such as redirecting to a new page.
+
+
+function saveForm(event) {
+  event.preventDefault();
+  // console.log(propertyId + " " + form.address);
+  api.saveProperty(propertyId, {address: form.address})
+    .then(
+      // console.log(res)
+      loadForm(propertyId)
+      )
+    .catch(err => console.log(err));
+}
+
+function handleInputChange(event) {
+  const { name,value } = event.target;
+  setForm({...form, [name]: value})
+};
   return (
     
     <div>
@@ -46,6 +95,7 @@ function Condo() {
       <header>
      <NavLink style={{color: "rgb(0, 212, 0)"}} to="/"> Home </NavLink>
       <a href="#" class="btn btn-outline-success" onClick={printDocument}>Export to PDF</a>
+      <button className="btn btn-primary" onClick={saveForm}>Save </button>
       </header>
       
     </div>
@@ -56,7 +106,8 @@ function Condo() {
             <mainpic>
             <img src="/images/insertimage.png" alt="" />
           </mainpic>
-        <input type="email" class="form-control" id="info" aria-describedby="emailHelp" placeholder="Type Adress Here"></input>
+          <h5>Note: only this Address field is funtioning</h5>
+        <input onChange= {handleInputChange} name="address" type="email" class="form-control" id="info" aria-describedby="emailHelp" placeholder={prevForm? prevForm:"Type address here"}></input>
         <br/>
         <br/>
         <div htmlFor="info" id="info">

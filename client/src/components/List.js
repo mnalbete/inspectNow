@@ -11,7 +11,6 @@ function List() {
   const user = useAuthenticatedUser();
   const history = useHistory();
   const [properties, setProperties] = useState([]);
-  console.log(user);
 
   useEffect(() => {
     loadProperties()
@@ -61,7 +60,7 @@ function List() {
         return (
           <a href="#" className="list-group-item list-group-item-action">
             <div className="d-flex w-100 justify-content-between">
-              <h5 className="mb-1">{property._id}</h5>
+              <h5 className="mb-1">{property.address? property.address : property._id}</h5>
               <button className="btn btn-primary" onClick={() => {history.push(`/api/properties/` + property._id)}}>Edit </button>
               <button className="btn btn-danger" onClick={() => {deleteProperty(property._id)}}>Delete </button>
             </div>

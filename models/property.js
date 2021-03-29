@@ -4,7 +4,7 @@ const PropertyInfo = require("./property_info")
 const propertySchema = new Schema({
     id: {type: String, require: true},
     // property_info: { type: PropertyInfo },
-    property_info: {type: String},
+    address: {type: String},
     report_overview: { type: String},
     front_door: {        
         type: String},
@@ -18,6 +18,6 @@ const propertySchema = new Schema({
       
 })
 
-const Property = mongoose.model("Property", propertySchema);
+const Property = mongoose.model("property", propertySchema);
 
 module.exports = Property;
