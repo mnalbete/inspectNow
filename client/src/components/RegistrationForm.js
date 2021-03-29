@@ -64,7 +64,7 @@ function RegistrationForm() {
 return (
          
     <body style={{ backgroundImage: `url(/images/frontdoor.jpg)`, backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat', height: `1960px`, width: `100%` }}>
+    backgroundRepeat: 'no-repeat', height: `1960px`, width: `100%`, backgroundPosition: `center center`}}>
     <form onSubmit={handleSubmit}>
       <div className="form-group" style={{ marginRight:`10%`,marginLeft:`10%` }}>
         <label htmlFor="exampleInputEmail1" style={{ color:`white` }}>Email address</label>
