@@ -77,7 +77,9 @@ return (
       </div>
       <button type="submit" className="btn btn-success btn-lg mt-4" style={{width: `80%`,marginRight:`10%`,marginLeft:`10%`}}>Submit</button>
     </form>
-    <Link className= "text-success" to="/login" style={{ color:`white`}}> Not a member? Login Here. </Link>
+    <div className= "d-flex justify-content-end" style={{ marginRight:`10%`}} >
+    <Link className= "text-white" to="/login"> Already a member? Login Here. </Link>
+    </div>
     </body>
   );
 }
