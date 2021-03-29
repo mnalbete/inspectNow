@@ -78,7 +78,7 @@ import { Link } from 'react-router-dom'
   return (
          
     <body style={{ backgroundImage: `url(/images/frontdoor.jpg)`, backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat', height: `1960px`, width: `100%` }}>
+    backgroundRepeat: 'no-repeat', height: `1960px`, width: `100%`, backgroundPosition: `center center` }}>
     <form onSubmit={handleSubmit}>
       <div className="form-group" style={{ marginRight:`10%`,marginLeft:`10%` }}>
         <label htmlFor="exampleInputEmail1" style={{ color:`white` }}>Email address</label>
@@ -91,7 +91,7 @@ import { Link } from 'react-router-dom'
       </div>
       <button type="submit" className="btn btn-success btn-lg mt-4" style={{width: `80%`,marginRight:`10%`,marginLeft:`10%`}}>Submit</button>
     </form>
-    <Link className= "text-success " to="/register" style={{ color:`white` }}> Not a member? Register here. </Link>
+    <Link className= "text-success" to="/register" style={{ color:`white` }}> Not a member? Register here. </Link>
     </body>
   );
 }

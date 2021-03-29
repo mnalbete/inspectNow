@@ -63,21 +63,21 @@ function RegistrationForm() {
 
 return (
          
-    <body style={{ backgroundImage: `url(/images/frontDoor.jpg)`, backgroundSize: 'cover',
+    <body style={{ backgroundImage: `url(/images/frontdoor.jpg)`, backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat', height: `1960px`, width: `100%` }}>
     <form onSubmit={handleSubmit}>
       <div className="form-group" style={{ marginRight:`10%`,marginLeft:`10%` }}>
         <label htmlFor="exampleInputEmail1" style={{ color:`white` }}>Email address</label>
         <input type="text" className="form-control" id="exampleInputEmail1" ref={emailRef} placeholder="Enter email"  />
         {/* /* <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small> */}
-      </div> */
+      </div> 
       <div className="form-group" style={{ marginRight:`10%`,marginLeft:`10%` }}>
         <label htmlFor="exampleInputPassword1" style={{ color:`white` }}>Password</label>
         <input type="password" className="form-control" id="exampleInputPassword1" ref={passwordRef} placeholder="Password"  />
       </div>
       <button type="submit" className="btn btn-success btn-lg mt-4" style={{width: `80%`,marginRight:`10%`,marginLeft:`10%`}}>Submit</button>
     </form>
-    <Link className= "text-success " to="/register" style={{ color:`white` }}> Not a member? Register here. </Link>
+    <Link className= "text-success" to="/register" style={{ color:`white`}}> Not a member? Register here. </Link>
     </body>
   );
 }

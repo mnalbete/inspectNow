@@ -74,11 +74,11 @@ function Body() {
 
 return (
   <div className = "backgroundHome"  style={{ 
-    backgroundImage: `url(/images/pexels-binyamin-mellish-106399.jpg)`,   backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat', height: `1960px`
+    backgroundImage: `url(/images/updatedbackground.jpg)`,   backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat', height: `1960px`, width:`100%`,backgroundPosition: `center center`
   }}>
 
-    <div class = "home" >
+    <div className = "home" style={{marginTop:`25px`}}>
 <div >
 {/* <div class="col-sm-2"> */}
 {/* <div class="card text-center"> */}
