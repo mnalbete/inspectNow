@@ -5,6 +5,10 @@ const propertySchema = new Schema({
     id: {type: String, require: true},
     // property_info: { type: PropertyInfo },
     address: {type: String},
+    homeowner: {type: String},
+    inspector: {type: String},
+    reportnumber: {type: String},
+    frontdoorcomment: {type: String},
     report_overview: { type: String},
     front_door: {        
         type: String},

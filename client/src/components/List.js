@@ -2,7 +2,7 @@ import '../App.css';
 // import Button from "@material-ui/core/Button"
 import React, { useEffect, useState } from "react";
 import api from '../utils/api';
-import {useAuthenticatedUser} from '../utils/auth';
+import { useAuthenticatedUser } from '../utils/auth';
 import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom'
 
@@ -18,7 +18,7 @@ function List() {
 
   function loadProperties() {
     api.getAllProperties()
-      .then(res => 
+      .then(res =>
         setProperties(res.data)
       )
       .catch(err => console.log(err));
@@ -44,33 +44,49 @@ function List() {
       .catch(err => console.log(err));
   }
   return (
- 
+
     <div>
       <div>
-     <Link style={{color: "rgb(0, 212, 0)"}} to="/"> Home </Link>
+        <Link style={{ color: "rgb(0, 212, 0)" }} to="/"> Home </Link>
       </div>
-      
-    
-       
-    <div className="list-group">
 
 
 
-      {properties.length ? (properties.map(property => {
-        return (
-          <a href="#" className="list-group-item list-group-item-action">
-            <div className="d-flex w-100 justify-content-between">
-              <h5 className="mb-1">{property.address? property.address : property._id}</h5>
-              <button className="btn btn-primary" onClick={() => {history.push(`/api/properties/` + property._id)}}>Edit </button>
-              <button className="btn btn-danger" onClick={() => {deleteProperty(property._id)}}>Delete </button>
-            </div>
-          </a>);
-      })
-      ) : (
-        <h3>No Results to Display</h3>
-      )}
+      <div className="list-group">
+
+
+
+        {properties.length ? (properties.map(property => {
+          return (
+            <a href="#" className="list-group-item list-group-item-action">
+              <div className="d-flex w-100 justify-content-between">
+                <h5 className="mb-1">{property.address ? property.address : property._id}</h5>
+              </div>
+              <div className="d-flex w-100 justify-content-between">
+                <h5 className="mb-1">{property.homeowner ? property.homeowner : property._id}</h5>
+              </div>
+              <div className="d-flex w-100 justify-content-between">
+                <h5 className="mb-1">{property.inspector ? property.inspector : property._id}</h5>
+              </div>
+              <div className="d-flex w-100 justify-content-between">
+                <h5 className="mb-1">{property.reportnumber ? property.reportnumber : property._id}</h5>
+              </div>
+              <div className="d-flex w-100 justify-content-between">
+                <h5 className="mb-1">{property.frontdoorcomment ? property.frontdoorcomment : property._id}</h5>
+              </div>
+
+
+              <div className="d-flex w-100 justify-content-between">
+                <button className="btn btn-primary" onClick={() => { history.push(`/api/properties/` + property._id) }}>Edit </button>
+                <button className="btn btn-danger" onClick={() => { deleteProperty(property._id) }}>Delete </button>
+              </div>
+            </a>);
+        })
+        ) : (
+          <h3>No Results to Display</h3>
+        )}
+      </div>
     </div>
-  </div>
   )
 };
 
